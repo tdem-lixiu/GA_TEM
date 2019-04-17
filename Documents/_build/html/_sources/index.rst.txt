@@ -1,5 +1,5 @@
 Welcome to GA-TEM's documentation!
-==================================
+************************************
 测试GA-TEM软件系统使用文档。GA-TEM，即\ ``Ground-Airborne Time
 domain Electromagnetic Method``
 
@@ -14,8 +14,17 @@ domain Electromagnetic Method``
 
 --------------
 
-链接
+工作模式
+************
 
+.. toctree::
+   :maxdepth: 1
+
+   content/project/project
+
+--------------
+链接
+************
 
 ===  =====================================================  ===============
 #    网址                                                   内容
@@ -28,7 +37,7 @@ domain Electromagnetic Method``
 
 
 课题组论文成果
-==================================
+**************
 
 
 .. list-table::
