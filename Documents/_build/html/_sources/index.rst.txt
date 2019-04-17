@@ -1,11 +1,7 @@
-.. GA-TEM documentation master file, created by
-   sphinx-quickstart on Mon Apr 15 16:00:40 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to GA-TEM's documentation!
 ==================================
-测试GA-TEM软件系统使用文档。GA-TEM，即\ ``Ground-Airborne Time domain Electromagnetic Method``
+测试GA-TEM软件系统使用文档。GA-TEM，即\ ``Ground-Airborne Time
+domain Electromagnetic Method``
 
 --------------
 
@@ -32,7 +28,7 @@ Welcome to GA-TEM's documentation!
 
 
 课题组论文成果
-=============
+==================================
 
 
 .. list-table::
@@ -45,21 +41,41 @@ Welcome to GA-TEM's documentation!
       - 李貅、张莹莹、卢绪山、姚伟华
       - 电性源瞬变电磁地空逆合成孔径成像
       - 地球物理学报,58(1),pp277-288,2015/1/15，SCI，已标注期刊论文
+    * - 3
+      - 孙怀凤、李貅、李术才、戚志鹏、王祎鹏、苏茂鑫、薛翊国、刘斌
+      - 考虑关断时间的回线源激发TEM三维时域有限差分正演
+      - 地球物理学报,03期,pp1049-1064,2013/3/15，SCI，已标注期刊论文
+    * - 4
+      - 戚志鹏、李貅、吴琼、孙怀凤、杨增林
+      - 从瞬变电磁扩散场到拟地震波场的全时域反变换算法
+      - 地球物理学报,56(10),pp3581-3595,2013，SCI，已标注期刊论文
+    * - 5
+      - Sun,Huaifeng、Li,Xiu、Li,Shucai、Qi,Zhipeng、Su,Maoxin、Xue,Yiguo-Multi
+      - componentandmulti-arrayTEMdetectioninkarsttunnels
+      - JournalofGeophysicsandEngineering,9(4),pp359-373,2012/8，EI,SCI，已标注期刊论文
+    * - 6
+      - 李貅、薛国强、刘银爱、钱建兵
+      - 瞬变电磁合成孔径成像方法研究
+      - 地球物理学报,01期,pp333-340,2012/1/15，SCI，已标注期刊论文
+    * - 7
+      - QiZhi-Peng、LiXiu、WuQiong、SunHuai-Feng、YangZeng-Li
+      - Anewalgorithmforfull-time-domainwave-fieldtransformationbasedontransientelectromagneticmethod
+      - ChineseJournalofGeophysics,56(10),pp3581-3595,2013/10，SCI，已标注期刊论文
+    * - 8
+      - Xue,G.Q.、Li,X.、Quan,H.J.、Jaggar,S.、Zhou,N.N.
+      - PhysicalsimulationandapplicationofanewTEMconfiguration
+      - EnvironmentalEarthSciences,67(5),pp1291-1298,2012/11，SCI，已标注期刊论文
+    * - 9
+      - G.Q.Xue、L.-J.Gelius、L.Xiu
+      - 3Dpseudo-seismicimagingoftransientelectromagneticdata-afeasibilitystudy
+      - GeophysicalProspecting,61(Suppl.1),pp561-571,2013，SCI，已标注期刊论文
+    * - 10
+      - ZhipengQi,XiuLi,XushanLu,YingyingZhangandWeihuaYao
+      - Inversetransformationalgorithmoftransientelectromagneticfieldanditshigh-resolutioncontinuousimaginginterpretationmethod
+      - JournalofGeophysicsandEngineering,12(2),pp242-252,2015/5/18，SCI，已标注期刊论文
 
 
 
-
-
-
-..         3、-孙怀凤、*李貅、李术才、戚志鹏、王祎鹏、苏茂鑫、薛翊国、刘斌-考虑关断时间的回线源激发TEM三维时域有限差分正演-地球物理学报,03期,pp1049-1064,2013/3/15，SCI，已标注期刊论文
-..         4、-戚志鹏、*李貅、吴琼、孙怀凤、杨增林-从瞬变电磁扩散场到拟地震波场的全时域反变换算法-地球物理学报,56(10),pp3581-3595,2013，SCI，已标注期刊论文
-..         5、-Sun,Huaifeng、*Li,Xiu、Li,Shucai、Qi,Zhipeng、Su,Maoxin、Xue,Yiguo-Multi-componentandmulti-arrayTEMdetectioninkarsttunnels-JournalofGeophysicsandEngineering,9(4),pp359-373,2012/8，EI,SCI，已标注期刊论文
-..         6、-*李貅、薛国强、刘银爱、钱建兵-瞬变电磁合成孔径成像方法研究-地球物理学报,01期,pp333-340,2012/1/15，SCI，已标注期刊论文
-..         7、-*QiZhi-Peng、LiXiu、WuQiong、SunHuai-Feng、YangZeng-Li-Anewalgorithmforfull-time-domainwave-fieldtransformationbasedontransientelectromagneticmethod-ChineseJournalofGeophysics,56(10),pp3581-3595,2013/10，SCI，已标注期刊论文
-..         8、-Xue,G.Q.、Li,X.、Quan,H.J.、Jaggar,S.、Zhou,N.N.-PhysicalsimulationandapplicationofanewTEMconfiguration-EnvironmentalEarthSciences,67(5),pp1291-1298,2012/11，SCI，已标注期刊论文
-..         9、-G.Q.Xue、L.-J.Gelius、L.Xiu-3Dpseudo-seismicimagingoftransientelectromagneticdata-afeasibilitystudy-GeophysicalProspecting,61(Suppl.1),pp561-571,2013，SCI，已标注期刊论文
-..         10、-ZhipengQi,XiuLi,XushanLu,YingyingZhangandWeihuaYao-Inversetransformationalgorithmoftransientelectromagneticfieldanditshigh-resolutioncontinuousimaginginterpretationmethod-JournalofGeophysicsandEngineering,12(2),pp242-252,
-..         2015/5/18，SCI，已标注期刊论文
 .. 11、-Guo-qiangXue,XiuLi,LeivJ.Gelius,Zhi-pengQi,Nan-nanZhou1andWei-yingChen-ANewApparentResistivityFormulaforIn-loopFastSoundingTEMTheoryandApplication-JournalofEnvironmentalandEngineeringGeophysics,20(2),pp107-118,20157月，SCI，已标注期刊论文
 .. 12、-智庆全、李貅、戚志鹏、马玉龙-地下瞬变电磁法一维反演研究-2014年中国地球科学联合学术年会——专题22：煤炭资源与矿山安全勘查技术,2014/10/20-2014/10/23,p1,中国北京,2014/10/20，已标注会议论文
 .. 13、-曾友强、李貅、智庆全-大定源瞬变电磁水平分量解释研究-2014年中国地球科学联合学术年会——专题24：浅地表地球物理进展,2014/10/20-2014/10/23,p1,中国北京,2014/10/20，已标注会议论文
