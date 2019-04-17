@@ -14,15 +14,6 @@ domain Electromagnetic Method``
 
 --------------
 
-工作模式
-************
-
-.. toctree::
-   :maxdepth: 1
-
-   content/project/project
-
---------------
 链接
 ************
 
@@ -38,8 +29,6 @@ domain Electromagnetic Method``
 
 课题组论文成果
 **************
-
-
 .. list-table::
 
     * - 1
@@ -83,7 +72,7 @@ domain Electromagnetic Method``
       - Inversetransformationalgorithmoftransientelectromagneticfieldanditshigh-resolutioncontinuousimaginginterpretationmethod
       - JournalofGeophysicsandEngineering,12(2),pp242-252,2015/5/18，SCI，已标注期刊论文
 
-
+--------------
 
 .. 11、-Guo-qiangXue,XiuLi,LeivJ.Gelius,Zhi-pengQi,Nan-nanZhou1andWei-yingChen-ANewApparentResistivityFormulaforIn-loopFastSoundingTEMTheoryandApplication-JournalofEnvironmentalandEngineeringGeophysics,20(2),pp107-118,20157月，SCI，已标注期刊论文
 .. 12、-智庆全、李貅、戚志鹏、马玉龙-地下瞬变电磁法一维反演研究-2014年中国地球科学联合学术年会——专题22：煤炭资源与矿山安全勘查技术,2014/10/20-2014/10/23,p1,中国北京,2014/10/20，已标注会议论文
@@ -104,7 +93,21 @@ domain Electromagnetic Method``
 .. 27、-李貅-基于GID的复杂模型的瞬变电磁三维正演-015年中国地球科学联合学术年会——专题43：工程地球物理技术进展与应用,2015/10/10-2015/10/15,2015/10/10,分组报告，已标注会议论文
 
 
+工作模式
+************
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
 
+   content/project/project
+
+--------------
+
+
+学习总结
+********
+.. toctree::
+   :maxdepth: 1
+
+   Summarize/chk/ATEM1D
+
+--------------
