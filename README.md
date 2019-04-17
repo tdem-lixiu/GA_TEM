@@ -17,4 +17,4 @@
 |#|网址|内容|
 |---|----|-----|
 |1|`(https://baike.baidu.com/item/%E6%9D%8E%E8%B2%85)`|[李貅百度百科](https://baike.baidu.com/item/%E6%9D%8E%E8%B2%85)|
-|2|`(https://ga-tem.readthedocs.io/en/latest/#)`|[开发文档](https://ga-tem.readthedocs.io/en/latest/#)|
+|2|`(https://ga-tem.readthedocs.io/en/master/)`|[开发文档](https://ga-tem.readthedocs.io/en/master/)|
