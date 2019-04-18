@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>第一章 MobaXterm的安装 &mdash; GA-TEM 0.0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="航空TEM程序总结-曹华科" href="../chk/ATEM1D.html" />
+    <link rel="prev" title="使用文档-鲁凯亮" href="../sumindex.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> GA-TEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/project.html">地空软件开发工作管理规范</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../sumindex.html">使用文档-鲁凯亮</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">第一章 MobaXterm的安装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mobaxterm-personal-edition">1. 安装MobaXterm Personal Edition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2. 服务器的登陆与退出</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">第二章 文件处理命令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ls">1. ls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cd">2. cd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pwd">3. pwd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#touch">4. touch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mkdir">5. mkdir</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cp">6. cp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mv">7. mv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rm">8. rm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cat">9. cat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#more">10. more</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#head">11. head</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tail">12. tail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ln">13. ln</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">第三章 权限管理命令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#chmod">1. chmod</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html#id2">学习总结-曹华科</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GA-TEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../sumindex.html">使用文档-鲁凯亮</a> &raquo;</li>
+        
+      <li>第一章 MobaXterm的安装</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Summarize/lkl/Linux_lkl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mobaxterm">
+<h1>第一章 MobaXterm的安装<a class="headerlink" href="#mobaxterm" title="永久链接至标题">¶</a></h1>
+<div class="section" id="mobaxterm-personal-edition">
+<h2>1. 安装MobaXterm Personal Edition<a class="headerlink" href="#mobaxterm-personal-edition" title="永久链接至标题">¶</a></h2>
+<p>笔者给出下载地址，<code class="docutils literal notranslate"><span class="pre">http://pan.baidu.com/s/1jHXiD6I</span></code></p>
+<p>（1）下载并解压，以管理员身份运行MobeXter-Setup-7.0.msi，进入安装界面。</p>
+<p>（2）选择 <strong>next</strong> ，进入下一步。</p>
+<p>（3）选择“接受条款”，点击 <strong>next</strong> 。</p>
+<p>（4）选择安装路径，本次示范选择默认路径，点击 <strong>next</strong> 。</p>
+<p>（5）安装完成，点击 <strong>finish</strong> 。安装完成后，将安装包内的Git.mxt3复制到 <code class="docutils literal notranslate"><span class="pre">C:\\Program</span> <span class="pre">files(x86)\Mobatek\MobaXterm</span> <span class="pre">Personal</span> <span class="pre">Edition\</span></code> 中文件夹内。
+（依据你自己的安装路径）
+双击快捷方式，打开软件，界面如下所示</p>
+</div>
+<div class="section" id="id1">
+<h2>2. 服务器的登陆与退出<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>在登录服务器时需要账户与密码，需要和管理人员（刘文韬，鲁凯亮）申请账号，在取得账号之后，在登陆界面输入</p>
+<p class="centered">
+<strong>ssh <a class="reference external" href="mailto:username&#37;&#52;&#48;192&#46;168&#46;199&#46;101">username<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>199<span>&#46;</span>101</a></strong></p><p>比如鲁凯亮的就是</p>
+<p class="centered">
+<strong>ssh <a class="reference external" href="mailto:lkl&#37;&#52;&#48;192&#46;168&#46;199&#46;101">lkl<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>199<span>&#46;</span>101</a></strong></p><p>输入完账号后，按回车键输入密码</p>
+<p>输入密码时，不会像windows操作系统那样显示成 <code class="docutils literal notranslate"><span class="pre">******</span></code> ，不用理会，只管输入自己的密码，前提是保证密码正确。（密码一般默认为 <code class="docutils literal notranslate"><span class="pre">tdemusernametdem</span></code> ，例如鲁凯亮的密码就是 <code class="docutils literal notranslate"><span class="pre">tdemlkltdem</span></code> ）。输入密码之后，就可以进去操作界面了。下面一章将会介绍简单的操作命令行。退出的时候直接在界面输入 <strong>exit</strong> 。或者直接叉掉界面就行。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h1>第二章 文件处理命令<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h1>
+<div class="section" id="ls">
+<h2>1. ls<a class="headerlink" href="#ls" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：list</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/ls</span></code></p>
+<p>执行权限：所有用户</p>
+<p>功能描述：显示目录文件</p>
+<p>语法：</p>
+<blockquote>
+<div><p>ls 选项[-ald] [文件或目录]</p>
+<p>-a 显示所有文件，包括隐藏文件</p>
+<p>-l 详细信息显示</p>
+<p>-d 查看目录属性</p>
+</div></blockquote>
+</div>
+<div class="section" id="cd">
+<h2>2. cd<a class="headerlink" href="#cd" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：change directory</p>
+</div>
+<p>命令所在路径：shell内置命令</p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>cd  [目录]</p>
+</div></blockquote>
+<p>功能描述：切换目录</p>
+<p>范例：</p>
+<p class="centered">
+<strong>cd  /   切换到根目录</strong></p><p class="centered">
+<strong>cd  ..   回到上一级目录</strong></p><p>说明：两个特殊的目录 . 和 .. ，分别代表当前目录和当前目录的父目录。</p>
+</div>
+<div class="section" id="pwd">
+<h2>3. pwd<a class="headerlink" href="#pwd" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：print working directory</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/pwd</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>pwd</p>
+</div></blockquote>
+<p>功能描述：显示当前所在的工作目录</p>
+<p>范例：</p>
+<p class="centered">
+<strong>pwd</strong></p><p class="centered">
+<strong>输出结果： <code class="docutils literal notranslate"><span class="pre">/home/lkl</span></code></strong></p></div>
+<div class="section" id="touch">
+<h2>4. touch<a class="headerlink" href="#touch" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/touch</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>touch  [文件名]</p>
+</div></blockquote>
+<p>功能描述：创建空文件</p>
+<p>范例：</p>
+<p class="centered">
+<strong>touch  newfile</strong></p></div>
+<div class="section" id="mkdir">
+<h2>5. mkdir<a class="headerlink" href="#mkdir" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：make directories</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/mkdir</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>mkdir  [文件名]</p>
+</div></blockquote>
+<p>功能描述：创建新目录</p>
+<p>范例：</p>
+<p class="centered">
+<strong>make  newdir</strong></p></div>
+<div class="section" id="cp">
+<h2>6. cp<a class="headerlink" href="#cp" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：copy</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/cp</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>cp -R [源文件或目录] [目的目录]</p>
+<p>-R 复制目录</p>
+</div></blockquote>
+<p>功能描述：复制文件或目录</p>
+<p>范例：</p>
+<p class="centered">
+<strong>cp  file1  file2  dir1   将文件file1、file2复制到目录dir1</strong></p><p class="centered">
+<strong>cp  -R  dir1  dir2    将dir1下的所有文件及子目录复制到dir2</strong></p></div>
+<div class="section" id="mv">
+<h2>7. mv<a class="headerlink" href="#mv" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：move</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/mv</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>mv  [源文件或目录]  [目的目录]</p>
+</div></blockquote>
+<p>功能描述：移动文件、更名</p>
+<p>范例：</p>
+<p class="centered">
+<strong>mv  file1  file3     将当前目录下文件file1更名为file3</strong></p><p class="centered">
+<strong>mv  file2  dir2      将文件file2移动到目录dir2下</strong></p></div>
+<div class="section" id="rm">
+<h2>8. rm<a class="headerlink" href="#rm" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：remove</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/rm</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>rm -r [文件或目录]</p>
+<p>-r 删除目录</p>
+</div></blockquote>
+<p>功能描述：删除文件</p>
+<p>范例：</p>
+<p class="centered">
+<strong>mv  file3     删除文件file3</strong></p><p class="centered">
+<strong>mv  –r  dir1     删除目录dir1</strong></p></div>
+<div class="section" id="cat">
+<h2>9. cat<a class="headerlink" href="#cat" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：concatenate and display files</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/cat</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>cat  [文件名]</p>
+</div></blockquote>
+<p>功能描述：显示文件内容</p>
+<p>范例：</p>
+<p class="centered">
+<strong>cat  /etc/issue</strong></p><p class="centered">
+<strong>cat  /etc/services</strong></p></div>
+<div class="section" id="more">
+<h2>10. more<a class="headerlink" href="#more" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/more</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>more  [文件名]</p>
+<p>（空格）或f   显示下一页</p>
+<p>（Enter）      显示下一行</p>
+<p>q或Q       退出</p>
+</div></blockquote>
+<p>功能描述：分页显示文件内容</p>
+<p>范例：</p>
+<p class="centered">
+<strong>more  /etc/services</strong></p></div>
+<div class="section" id="head">
+<h2>11. head<a class="headerlink" href="#head" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/head</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>head  -num  [文件名]</p>
+<p>-num 显示文件的前num行</p>
+</div></blockquote>
+<p>功能描述：查看文件的前几行</p>
+<p>范例：</p>
+<p class="centered">
+<strong>head  -20  /etc/services</strong></p></div>
+<div class="section" id="tail">
+<h2>12. tail<a class="headerlink" href="#tail" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/tail</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>head -num  [文件名]</p>
+<p>-num 显示文件的前num行</p>
+<p>-f 动态显示文件内容</p>
+</div></blockquote>
+<p>功能描述：查看文件的后几行</p>
+<p>范例：</p>
+<p class="centered">
+<strong>tail  -20  /etc/services</strong></p></div>
+<div class="section" id="ln">
+<h2>13. ln<a class="headerlink" href="#ln" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：link</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/ln</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>ln  -s  [源文件]  [目标文件]</p>
+<p>-s 创建软链接</p>
+</div></blockquote>
+<p>功能描述：产生链接文件</p>
+<p>范例：</p>
+<p class="centered">
+<strong>ln  -s  /etc/services  /issue.soft     创建文件/etc/issue的软链接/issue.soft</strong></p><p class="centered">
+<strong>ln  /etc/issue  /issue.hard     创建文件/etc/issue的硬链接/issue.hard</strong></p></div>
+</div>
+<div class="section" id="id3">
+<h1>第三章 权限管理命令<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h1>
+<div class="section" id="chmod">
+<h2>1. chmod<a class="headerlink" href="#chmod" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：change the permissions mode of a file</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/chmod</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>chmod  [{ugo}{+-=}{rwx}]  [文件或目录]</p>
+<p>[mode=421]  [文件或目录]</p>
+</div></blockquote>
+<p>功能描述：改变文件或目录权限</p>
+<p>范例：</p>
+<p class="centered">
+<strong>chmod  g+w  file1     赋予文件file1所属组写权限</strong></p><p class="centered">
+<strong>chmod  777  dir1     设定目录dir1为所有用户具有全部权限</strong></p><table class="docutils align-center">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>代表字符</p></td>
+<td><p>权限</p></td>
+<td><p>对文件的含义</p></td>
+<td><p>对目录的含义</p></td>
+</tr>
+<tr class="row-even"><td><p>r</p></td>
+<td><p>读权限</p></td>
+<td><p>可以查看文件内容</p></td>
+<td><p>可以列出目录中的内容</p></td>
+</tr>
+<tr class="row-odd"><td><p>w</p></td>
+<td><p>写权限</p></td>
+<td><p>可以修改文件内容</p></td>
+<td><p>可以在目录中创建、删除文件</p></td>
+</tr>
+<tr class="row-even"><td><p>x</p></td>
+<td><p>执行权限</p></td>
+<td><p>可以执行文件</p></td>
+<td><p>可以进入目录</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../chk/ATEM1D.html" class="btn btn-neutral float-right" title="航空TEM程序总结-曹华科" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../sumindex.html" class="btn btn-neutral float-left" title="使用文档-鲁凯亮" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jing Xu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

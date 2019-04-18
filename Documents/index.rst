@@ -157,6 +157,6 @@ domain Electromagnetic Method``
 .. toctree::
    :maxdepth: 1
 
-   Summarize/chk/ATEM1D
+   Summarize/sumindex
 
 --------------
