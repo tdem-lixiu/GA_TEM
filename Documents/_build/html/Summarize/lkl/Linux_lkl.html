@@ -113,6 +113,34 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">第三章 权限管理命令</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#chmod">1. chmod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chown">2. chown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#chgrp">3. chgrp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">第四章 文件搜索命令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#which">1. which</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#find">2. find</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#locate">3. locate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grep">4. grep</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">第五章 帮助命令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#man">1. man</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#info">2. info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#whatis">3. whatis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">第六章 压缩解压命令</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gzip">1. gzip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gunzip">2. gunzip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tar">3. tar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zip">4. zip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unzip">5. unzip</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">第七章 文件上传与下载以及注意事项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">1. 文件上传与下载</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">2. 注意事项</a></li>
 </ul>
 </li>
 </ul>
@@ -469,6 +497,264 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="chown">
+<h2>2. chown<a class="headerlink" href="#chown" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：change file ownership</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/chown</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>chown  [用户]  [文件或目录]</p>
+</div></blockquote>
+<p>功能描述：改变文件或目录的所有者</p>
+<p>范例：</p>
+<p class="centered">
+<strong>chown  somebody  file1  改写文件file1的所有者为somebody</strong></p></div>
+<div class="section" id="chgrp">
+<h2>3. chgrp<a class="headerlink" href="#chgrp" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：change file group ownership</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/chgrp</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>chown  [用户组]  [文件或目录]</p>
+</div></blockquote>
+<p>功能描述：改变文件或目录的所属组</p>
+<p>范例：</p>
+<p class="centered">
+<strong>chown  adm  file1  改写文件file1的所属组为adm</strong></p></div>
+</div>
+<div class="section" id="id4">
+<h1>第四章 文件搜索命令<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h1>
+<div class="section" id="which">
+<h2>1. which<a class="headerlink" href="#which" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/usr/bin/which</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>which  [命令名称]</p>
+</div></blockquote>
+<p>功能描述：显示系统命令所在目录</p>
+<p>范例：</p>
+<p class="centered">
+<strong>which ls</strong></p></div>
+<div class="section" id="find">
+<h2>2. find<a class="headerlink" href="#find" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/usr/bin/find</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>find  [搜索路径]  [搜寻关键字]</p>
+</div></blockquote>
+<p>功能描述：查找文件或目录</p>
+<p>范例：</p>
+<p class="centered">
+<strong>find  /etc  –name  init  在目录/etc中查找文件init</strong></p><p class="centered">
+<strong>find  /  -size  +204800  在根目录下查找大于100MB的文件</strong></p><p class="centered">
+<strong>find  /  -user  sam  在根目录下查找所有者为sam的文件</strong></p></div>
+<div class="section" id="locate">
+<h2>3. locate<a class="headerlink" href="#locate" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：list files in databases</p>
+</div>
+<p>命令所在路径：<code class="docutils literal notranslate"><span class="pre">/usr/bin/locate</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>locate  [搜寻关键字]</p>
+</div></blockquote>
+<p>功能描述：查找文件或目录</p>
+<p>范例：</p>
+<p class="centered">
+<strong>locate  file  列出所有和file相关的文件</strong></p></div>
+<div class="section" id="grep">
+<h2>4. grep<a class="headerlink" href="#grep" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/locate</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>find  [指定字符串]  [源文件]</p>
+</div></blockquote>
+<p>功能描述：在文件中搜寻字符串匹配的行并输出</p>
+<p>范例：</p>
+<p class="centered">
+<strong>grep  ftp  /etc/services</strong></p></div>
+</div>
+<div class="section" id="id5">
+<h1>第五章 帮助命令<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h1>
+<div class="section" id="man">
+<h2>1. man<a class="headerlink" href="#man" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：manual</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/usr/bin/man</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>man  [命令或配置文件]</p>
+</div></blockquote>
+<p>功能描述：获得帮助信息</p>
+<p>范例：</p>
+<p class="centered">
+<strong>man ls  查看ls命令的帮助信息</strong></p><p class="centered">
+<strong>man services  查看配置文件services的帮助信息</strong></p></div>
+<div class="section" id="info">
+<h2>2. info<a class="headerlink" href="#info" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：information</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/usr/bin/info</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>info [任何关键字]</p>
+</div></blockquote>
+<p>功能描述：获得帮助信息</p>
+<p>范例：</p>
+<p class="centered">
+<strong>info ls  查看ls命令的帮助信息</strong></p></div>
+<div class="section" id="whatis">
+<h2>3. whatis<a class="headerlink" href="#whatis" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/usr/bin/whatis</span> <span class="pre">apropos</span></code>
+<code class="docutils literal notranslate"><span class="pre">/usr/bin/makewhatis</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>whatis  [任何关键字]</p>
+</div></blockquote>
+<p>功能描述：获得索引的简短说明信息</p>
+<p>范例：</p>
+<p class="centered">
+<strong>whatis ls  查看ls命令的帮助信息</strong></p></div>
+</div>
+<div class="section" id="id6">
+<h1>第六章 压缩解压命令<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h1>
+<div class="section" id="gzip">
+<h2>1. gzip<a class="headerlink" href="#gzip" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：GNU zip</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/gzip</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>gzip 选项 [文件]</p>
+</div></blockquote>
+<p>功能描述：压缩文件</p>
+<p>压缩后文件格式：.gz</p>
+</div>
+<div class="section" id="gunzip">
+<h2>2. gunzip<a class="headerlink" href="#gunzip" title="永久链接至标题">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>命令英文原意：GNU unzip</p>
+</div>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/gunzip</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>gunzip 选项 [压缩文件]</p>
+</div></blockquote>
+<p>功能描述：解压缩.gz的压缩文件</p>
+<p>范例：</p>
+<p class="centered">
+<strong>gunzip  file1.gz</strong></p></div>
+<div class="section" id="tar">
+<h2>3. tar<a class="headerlink" href="#tar" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/bin/tar</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">选项</span><span class="p">[</span><span class="n">cvf</span><span class="p">]</span>  <span class="p">[</span><span class="n">目录</span><span class="p">]</span>
+<span class="o">-</span><span class="n">c</span>  <span class="n">产生</span><span class="o">.</span><span class="n">tar打包文件</span>
+<span class="o">-</span><span class="n">v</span>  <span class="n">显示详细信息</span>
+<span class="o">-</span><span class="n">f</span>  <span class="n">指定压缩后的文件名</span>
+<span class="o">-</span><span class="n">z</span>  <span class="n">打包同时压缩</span>
+</pre></div>
+</div>
+<p>功能描述：打包目录</p>
+<p>压缩后文件格式：.tar.gz</p>
+<p>范例：</p>
+<p class="centered">
+<strong>tar  –zcvf  dir1.tar.gz  dir1  将目录dir1压缩成一个打包并压缩的文件</strong></p><p>tar命令解压缩语法</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">x</span>  <span class="n">解包</span><span class="o">.</span><span class="n">tar文件</span>
+<span class="o">-</span><span class="n">v</span>  <span class="n">显示详细信息</span>
+<span class="o">-</span><span class="n">f</span>  <span class="n">指定解压文件</span>
+<span class="o">-</span><span class="n">z</span>  <span class="n">解压缩</span>
+</pre></div>
+</div>
+<p>范例：</p>
+<p class="centered">
+<strong>tar  –zxvf  dir1.tar.gz</strong></p></div>
+<div class="section" id="zip">
+<h2>4. zip<a class="headerlink" href="#zip" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/usr/bin/tar</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>zip 选项[-r]  [压缩后文件名称]  [文件或目录]
+-r  压缩目录</p>
+</div></blockquote>
+<p>功能描述：压缩文件或目录</p>
+<p>压缩后文件格式：.zip</p>
+<p>范例：</p>
+<p class="centered">
+<strong>zip  services.zip  /etc/services  压缩文件</strong></p><p class="centered">
+<strong>zip  –r  test.zip  /test  压缩目录</strong></p></div>
+<div class="section" id="unzip">
+<h2>5. unzip<a class="headerlink" href="#unzip" title="永久链接至标题">¶</a></h2>
+<p>命令所在路径： <code class="docutils literal notranslate"><span class="pre">/usr/bin/unzip</span></code></p>
+<p>执行权限：所有用户</p>
+<p>语法：</p>
+<blockquote>
+<div><p>unzip  [压缩文件]</p>
+</div></blockquote>
+<p>功能描述：解压.zip的压缩文件</p>
+<p>范例：</p>
+<p class="centered">
+<strong>unzip  test.zip  /test</strong></p></div>
+</div>
+<div class="section" id="id7">
+<h1>第七章 文件上传与下载以及注意事项<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id8">
+<h2>1. 文件上传与下载<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>启动MobeXter后，在上传文件之前一定不要先登陆，输入下面命令行上传代码</p>
+<p class="centered">
+<strong>scp  –r  /drives/d/file  <a class="reference external" href="mailto:username&#37;&#52;&#48;192&#46;168&#46;199&#46;101">username<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>199<span>&#46;</span>101</a>:/home/username/work</strong></p><p>以笔者为例</p>
+<p class="centered">
+<strong>scp  –r  /drives/d/file  <a class="reference external" href="mailto:lkl&#37;&#52;&#48;192&#46;168&#46;199&#46;101">lkl<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>199<span>&#46;</span>101</a>:/home/lkl/work</strong></p><p>命令行的意思是将笔者PC上D盘中的文件（夹）上传到家目录下的用户lkl下的work目录中。</p>
+<p>在服务器上算完程序后，通常我们要将计算出来的数据下载到PC，下面给出下载文件的命令行</p>
+<p class="centered">
+<strong>scp  –r  <a class="reference external" href="mailto:username&#37;&#52;&#48;192&#46;168&#46;199&#46;101">username<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>199<span>&#46;</span>101</a>:/home/username/work/shuju.dat  /drives/d</strong></p><p>同样，以笔者为例</p>
+<p class="centered">
+<strong>scp  –r  <a class="reference external" href="mailto:lkl&#37;&#52;&#48;192&#46;168&#46;199&#46;101">lkl<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>199<span>&#46;</span>101</a>:/home/lkl/work/shuju.dat  /drives/d</strong></p><p>命令行的意思是将家目录下的用户lkl下的work目录中的shuju.dat数据文件下载到PC的D盘中。</p>
+</div>
+<div class="section" id="id9">
+<h2>2. 注意事项<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>（1）Linux严格区分大小写，命令名基本都是小写的英文字母</p>
+<p>（2）方括号部分是可选项，可以不出现</p>
+<p>（3）多个选项可以同时出现，例如： <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-ah</span></code></p>
+<p>（4）注意命令额参数之间的空格，多个空格也视为一个空格</p>
+<p>（5）续行符 <code class="docutils literal notranslate"><span class="pre">\</span></code></p>
+<p>（6）tab键自动补齐功能。比如 <code class="docutils literal notranslate"><span class="pre">work</span></code> 目录下只有 <code class="docutils literal notranslate"><span class="pre">shuju.dat</span></code> 一个文件，查看此文件时，输入下面命令</p>
+<p class="centered">
+<strong>more  s</strong></p><p>然后按一下tab键，就可直接查看 <code class="docutils literal notranslate"><span class="pre">shuju.dat</span></code> 中的内容，其功能相当于</p>
+<p class="centered">
+<strong>more  shuju.dat</strong></p><p>（7）通配符。这里说一个比较常用的通配符 <code class="docutils literal notranslate"><span class="pre">*</span></code> 。例如在 <code class="docutils literal notranslate"><span class="pre">work</span></code> 目录下有成百上千个 <code class="docutils literal notranslate"><span class="pre">**.dat</span></code> 文件和很多其他文件，一个个删除dat文件显然是一个很笨蛋的方法，这里通配符*就起到了很大的作用，输入下面命令</p>
+<p class="centered">
+<strong>rm  -r  <a href="#id10"><span class="problematic" id="id11">*</span></a>.dat</strong></p><p>就可以将dat文件全部删除。</p>
+<p>（8）中断一个不需要的进程： <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> 。这里不是windows下复制的意思。</p>
+<p>（9）杀死一个失控进程。首先在终端（即界面）输入top命令，查看自己想要杀掉的进程的PID号，（即执行程序exe前面的数字）。输入k，然后输入对应的PID号，回车即可。</p>
 </div>
 </div>
 
