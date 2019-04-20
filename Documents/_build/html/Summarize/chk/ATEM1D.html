@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="prev" title="地空软件开发工作管理规范" href="../../content/project/project.html" /> 
+    <link rel="prev" title="第一章 MobaXterm的安装" href="../lkl/Linux_lkl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,16 +88,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../content/project/project.html">地空软件开发工作管理规范</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">航空TEM程序总结-曹华科</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">1.为什么视电阻率定义会得不到浅层的数据？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#k">2.为什么K型地电模型时，当第一层和第三层的层厚、电阻率参数不变时，改变第二层的电阻率，正演曲线几乎重合或者视电阻率曲线几乎不变？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">3.为什么第一层的电阻率不变的情况下，同一种波形的穿透深度会发生变化呢？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">4.为什么视电阻率定义晚期的时候误差会特别大，有多点跳跃？</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">程序改进：</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#atem1dfwd">1.ATEM1DFwd输入文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">2.ATEM1DFwd输出文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#atemappres">3.ATEMAppRes程序输入文件</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">4.ATEMAppRes程序输出文件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html">使用文档-鲁凯亮</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../sumindex.html#id2">学习总结-曹华科</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">航空TEM程序总结-曹华科</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">1.为什么视电阻率定义会得不到浅层的数据？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#k">2.为什么K型地电模型时，当第一层和第三层的层厚、电阻率参数不变时，改变第二层的电阻率，正演曲线几乎重合或者视电阻率曲线几乎不变？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.为什么第一层的电阻率不变的情况下，同一种波形的穿透深度会发生变化呢？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.为什么视电阻率定义晚期的时候误差会特别大，有多点跳跃？</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">程序改进：</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atem1dfwd">1.ATEM1DFwd输入文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">2.ATEM1DFwd输出文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atemappres">3.ATEMAppRes程序输入文件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">4.ATEMAppRes程序输出文件</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -144,6 +148,8 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../sumindex.html">使用文档-鲁凯亮</a> &raquo;</li>
         
       <li>航空TEM程序总结-曹华科</li>
     
@@ -323,7 +329,7 @@ bz                 !观测分量dbxdt;dbzdt;bx;bz,视电阻率定义的分量，
 0.004046       27.399505            !第一列是时间，第二列是定义出来的视电阻率
 0.004056       24.713108
 0.004066       22.674901
-0.004076 ***************            !********表示计算得到的值超过成像的最大或者最小范围
+0.004076       -1            !-1表示计算得到的值超过成像的最大或者最小范围或者超过迭代次数，在输出参数里面，-1处的值取为上一个值，并进行最小曲率插值
 0.004086       19.636782
 </pre></div>
 </div>
@@ -339,7 +345,7 @@ bz                 !观测分量dbxdt;dbzdt;bx;bz,视电阻率定义的分量，
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../../content/project/project.html" class="btn btn-neutral float-left" title="地空软件开发工作管理规范" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../lkl/Linux_lkl.html" class="btn btn-neutral float-left" title="第一章 MobaXterm的安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
