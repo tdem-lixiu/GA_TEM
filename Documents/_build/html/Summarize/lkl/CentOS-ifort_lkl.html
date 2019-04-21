@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Centos7上安装ifort2013使用说明-鲁凯亮 &mdash; GA-TEM 0.0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> GA-TEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/project.html">地空软件开发工作管理规范</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html">使用文档-鲁凯亮</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html#id2">学习总结-曹华科</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GA-TEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Centos7上安装ifort2013使用说明-鲁凯亮</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Summarize/lkl/CentOS-ifort_lkl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="centos7ifort2013">
+<h1>Centos7上安装ifort2013使用说明-鲁凯亮<a class="headerlink" href="#centos7ifort2013" title="永久链接至标题">¶</a></h1>
+<div class="section" id="intel-fortran">
+<h2>1. 下载Intel Fortran<a class="headerlink" href="#intel-fortran" title="永久链接至标题">¶</a></h2>
+<p>本文先给出linux系统下ifort2013的下载地址， <code class="docutils literal notranslate"><span class="pre">http://pan.baidu.com/s/1qY30xcg</span></code></p>
+</div>
+<div class="section" id="u">
+<h2>2.U盘导入<a class="headerlink" href="#u" title="永久链接至标题">¶</a></h2>
+<p>首先要做的工作是确定你的U盘格式，插入U盘，右击，点击“属性”。</p>
+<a class="reference internal image-reference" href="../../_images/CentOS-ifort-01.png"><img alt="../../_images/CentOS-ifort-01.png" class="align-center" src="../../_images/CentOS-ifort-01.png" style="width: 400px;" /></a>
+<p>可以看到我的U盘为ntfs格式，需要安装ntfs-3g的插件，而且没有yum源，需要下载，比较麻烦。
+如果你的linux物理机上已经安装了ntfs-3g的插件，那么直接可以进行挂载。
+如果没有安装ntfs-3g的插件，那么可以把U盘格式转换为fat格式。U盘在fat格式下不需要ntfs-3g插件，可直接挂载。</p>
+<p>以下命令我均以root身份执行，若是普通用户，需要sudo+命令，例如 <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">passwd</span></code></p>
+<p>FAT格式下的U盘挂载</p>
+<p>（1）插入U盘，在终端输入命令（严格区分大小写） fdisk –l（此命令为root用户登陆，如果是普通用户，
+需要sudo权限，sudo fdisk -l，查看分区概况</p>
+<p>设备名称为 <code class="docutils literal notranslate"><span class="pre">/dev/sdb1</span></code> ，U盘格式为FAT</p>
+<p>（2）建立usb挂载点</p>
+<p class="centered">
+<strong>cd  /mnt/</strong></p><p class="centered">
+<strong>mkdir  usb</strong></p><p>（3）挂载U盘</p>
+<p class="centered">
+<strong>mount  –t  vfat  /dev/sdb1  /mnt/usb</strong></p><p>（4）进入U盘并查看</p>
+<p class="centered">
+<strong>cd  /mnt/usb; ls</strong></p><p>里面有一个许可文件.lic和压缩包.tgz</p>
+<p>（5）将这许可文件和压缩包拷入另一目录（注意此时你在/mnt/usb下）</p>
+<p class="centered">
+<strong>mkdir  /home/lkl/ifort2013</strong></p><p class="centered">
+<strong>cp  –r  <a href="#id1"><span class="problematic" id="id2">*</span></a>.lic  /home/lkl/ifort2013</strong></p><p class="centered">
+<strong>cp  –r  <a href="#id3"><span class="problematic" id="id4">*</span></a>.tgz  /home/lkl/ifort2013</strong></p><p>（6）卸载U盘</p>
+<p class="centered">
+<strong>umount  /mnt/usb</strong></p><p>（7）进入目标目录</p>
+<p class="centered">
+<strong>cd  /home/lkl/ifort2013</strong></p><p>至此，准备工作已经做完。</p>
+</div>
+<div class="section" id="ntfs">
+<h2>3. NTFS格式处理<a class="headerlink" href="#ntfs" title="永久链接至标题">¶</a></h2>
+<p>如果U盘格式是NTFS格式，而且你的linux物理机上安装了ntfs-3g的插件</p>
+<p>（1）同样地，先查看分区概况</p>
+<p class="centered">
+<strong>fdisk  –l</strong></p><p>（2）挂载U盘</p>
+<p class="centered">
+<strong>mount  –t  ntfs-3g  /dev/sdb1  /mnt/usb（前面已经建立了挂载点/mnt/usb）</strong></p><p>接下里的操作步骤与U盘是FAT格式下的操作相同，不再累赘。</p>
+</div>
+<div class="section" id="ifort">
+<h2>4. 安装ifort<a class="headerlink" href="#ifort" title="永久链接至标题">¶</a></h2>
+<p>（1）解压压缩包</p>
+<p class="centered">
+<strong>tar  –zxvf  <a href="#id5"><span class="problematic" id="id6">*</span></a>.tgz</strong></p><p>为了方便，我将*.lic文件名修改为ifort2013.lic</p>
+<p class="centered">
+<strong>mv  <a href="#id7"><span class="problematic" id="id8">*</span></a>.lic  ifort2013.lic</strong></p><p>（2）进入解压后目录</p>
+<p class="centered">
+<strong>cd  parallel_studio_xe_2013_update2/;ls</strong></p><p>里面有一个install.sh文件，执行下面命令安装</p>
+<p class="centered">
+<strong>./install.sh</strong></p><p>（3）安装过程</p>
+<p>输入“1”，回车，进去安装阶段。安装过程总共分为7步</p>
+<p>第一步：直接回车。接下来系统提示Option&gt;Missing Optional Pre-requisite(s)，不用理会，输入 <code class="docutils literal notranslate"><span class="pre">1</span></code> ，回车。</p>
+<a class="reference internal image-reference" href="../../_images/CentOS-ifort-02.png"><img alt="../../_images/CentOS-ifort-02.png" class="align-center" src="../../_images/CentOS-ifort-02.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/CentOS-ifort-03.png"><img alt="../../_images/CentOS-ifort-03.png" class="align-center" src="../../_images/CentOS-ifort-03.png" style="width: 600px;" /></a>
+<p>第二步：不停按空格键，停下来之后输入 <code class="docutils literal notranslate"><span class="pre">accept</span></code> ，回车</p>
+<a class="reference internal image-reference" href="../../_images/CentOS-ifort-04.png"><img alt="../../_images/CentOS-ifort-04.png" class="align-center" src="../../_images/CentOS-ifort-04.png" style="width: 600px;" /></a>
+<p>第三步：输入 <code class="docutils literal notranslate"><span class="pre">1</span></code> ，回车。</p>
+<a class="reference internal image-reference" href="../../_images/CentOS-ifort-05.png"><img alt="../../_images/CentOS-ifort-05.png" class="align-center" src="../../_images/CentOS-ifort-05.png" style="width: 600px;" /></a>
+<p>第四步：输入 <code class="docutils literal notranslate"><span class="pre">2</span></code> ，回车（不参与产品更新体验）</p>
+<p>第五步：这里我们采用默认安装，输入 <code class="docutils literal notranslate"><span class="pre">1</span></code> ，回车。（这里应该是 <code class="docutils literal notranslate"><span class="pre">/opt/intel</span></code> ，因为我的截图不小心删了，在网上找的一张截图）</p>
+<a class="reference internal image-reference" href="../../_images/CentOS-ifort-06.png"><img alt="../../_images/CentOS-ifort-06.png" class="align-center" src="../../_images/CentOS-ifort-06.png" style="width: 600px;" /></a>
+<p>第六步：安装完成后，回车</p>
+<p>（4）新建环境变量</p>
+<p>进入安装目录</p>
+<p class="centered">
+<strong>cd  /opt/intel;ls</strong></p><p class="centered">
+<strong>gedit  ~/.bashrc</strong></p><p>在最后一行依次输入</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">IFORTHOME</span><span class="o">=</span>/opt/intel2017
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/intel2017/bin:<span class="nv">$PATH</span>
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span>
+<span class="o">=</span>/opt/intel2017/compilers_and_libraries_2017/linux/lib/intel64
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span>
+<span class="o">=</span><span class="nv">$LD_LIBRARY_PATH</span>:/opt/intel2017/mkl/lib/intel64
+</pre></div>
+</div>
+<p>保存修改，并关闭.bashrc文件</p>
+<p>（5）使环境变量生效</p>
+<p class="centered">
+<strong>source  ~/.bashrc</strong></p><p>（6）重启电脑</p>
+<p class="centered">
+<strong>reboot</strong></p><p>（7）重启电脑后输入命令</p>
+<p class="centered">
+<strong>ifort  –v</strong></p><p>如果显示版本信息，则安装正确（我的版本为ifort version 17.0.4）。即2017update4。</p>
+</div>
+<div class="section" id="id9">
+<h2>5. 卸载ifort<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>（1）在安装目录中找到 <code class="docutils literal notranslate"><span class="pre">uninstall.sh</span></code> 文件，执行该文件</p>
+<p class="centered">
+<strong>./uninstall.sh</strong></p><p>（2）如果不小心手残，先将ifort的安装的目录删除了。此时再重新安装ifort，
+会出现“已经安装该产品”这种错误提示，导致安装程序无法正常进行。这是因为在上一次安装的时候，
+安装了一大堆rmp文件，并将文件的信息写入了rmp数据库中，而在删除的时候数据库并没有被更新。再次安装的时候，
+会在数据库中检测到，继而出现“已经安装该产品”的提示错误。解决办法挺简单的，找到所有已安装的intel相关的包，然后删除。</p>
+<p class="centered">
+<strong>rpm –qa | grep intel | awk ‘{print”yum remove -y”,$1}’ &gt; uninstall.sh</strong></p><p>查看uninstall.sh文件，删除其中不以intel开头的包。然后用root权限执行该脚本即可。
+（先chmod 777 uninstall.sh，然后./uninstall.sh）</p>
+</div>
+<div class="section" id="id10">
+<h2>郑重声明<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>（1）以上操作均以root身份执行</p>
+<p>（2）本文是篇参考文章，尤其是对新手来说，在安装过程中会遇到各种各样的问题，请不要认为这篇文章无用。
+因为linux操作系统在安装软件时可能需要各种各样的插件，如果你正好缺少哪个插件，则可能会安装失败。</p>
+<p>（3）经过本人亲测，按照上面的教程安装成功。如有疑问，欢迎拍砖。本人联系方式如下</p>
+<p>QQ： <strong>735343320</strong></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jing Xu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

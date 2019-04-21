@@ -159,5 +159,3 @@ domain Electromagnetic Method``
    :maxdepth: 1
 
    Summarize/sumindex
-
---------------

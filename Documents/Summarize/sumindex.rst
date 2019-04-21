@@ -4,6 +4,8 @@
    :maxdepth: 1
 
    lkl/Linux_lkl
+   lkl/Fortran-Matlab_lkl
+   lkl/CentOS-ifort_lkl
 
 -------------
 

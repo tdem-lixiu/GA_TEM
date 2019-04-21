@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="prev" title="第一章 MobaXterm的安装" href="../lkl/Linux_lkl.html" /> 
+    <link rel="prev" title="Linux简明教程-鲁凯亮" href="../lkl/Linux_lkl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -211,30 +211,20 @@
 <h2>程序改进：<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
 <p>原程序自带的是ic=0到4的情况，其中0代表脉冲波，1代表下阶跃波，2代表半正弦波，3代表梯形波，4代表三角波，
 他们的时间都是从on_time开始计算的。
-输入说明：当为脉冲波是，仅输入：0;
-1.当为下阶跃波时，仅输入：1；
+输入说明：当为脉冲波是，仅输入：0
+1.当为下阶跃波时，仅输入：1
 2.当为半正弦波时，需输入：2</p>
-<blockquote>
-<div><p>4.e-3 1.6e-2 2</p>
-</div></blockquote>
+<p>4.e-3 1.6e-2 2</p>
 <p>这里换行代表在文件输入中是需要换行的，第二行第一个数据是on_time时间，第二个是off_time，第三个是波形个数；</p>
 <p>3.当为梯形波时，需输入：3</p>
-<blockquote>
-<div><p>0.1e-4 3.98e-3 0.1e-4 1.6e-2  1  !上升沿的时间 平缓的时间 下降沿的时间 关断时间 波形的个数</p>
-</div></blockquote>
+<p>0.1e-4 3.98e-3 0.1e-4 1.6e-2  1  !上升沿的时间 平缓的时间 下降沿的时间 关断时间 波形的个数</p>
 <p>4.当为三角波时，需输入：4</p>
-<blockquote>
-<div><p>2.e-3 2.e-3 1.6e-2 1  !三角波左半边的时间 三角波右半边的时间 关断时间 波形个数</p>
-</div></blockquote>
+<p>2.e-3 2.e-3 1.6e-2 1  !三角波左半边的时间 三角波右半边的时间 关断时间 波形个数</p>
 <p>5.ic=5和ic=6是本笔者根据需要自己添加的功能。当为ic=5是，代表的是矩形波，需输入：5</p>
-<blockquote>
-<div><p>4.e-4 1.6e-3 2  !第一个是脉宽，第二个是波形的关断时间，第三个是波形个数</p>
-</div></blockquote>
+<p>4.e-4 1.6e-3 2  !第一个是脉宽，第二个是波形的关断时间，第三个是波形个数</p>
 <p>6.ic=6时，需输入：6</p>
-<blockquote>
-<div><p>5.e-5 31
-1     1       -1      -1      -1      1       1       1       1       1       -1      -1      1       1       -1      1       -1      -1      1       -1      -1      -1      -1      1       -1      1       -1      1       1       1       -1</p>
-</div></blockquote>
+<p>5.e-5 31</p>
+<p>1       1       -1      -1      -1      1       1       1       1       1       -1      -1      1       1       -1      1       -1      -1      1       -1      -1      -1      -1      1       -1      1       -1      1       1       1       -1</p>
 <p>其中第二行，第一个代表最小码元，第二个代表伪随机波的序列个数，第三行代表伪随机二进制码，参考文献是：</p>
 <p>《多通道瞬变电磁m序列全时正演模拟与反演》、《MTEM波场变换与偏移成像方法研究_智庆全》
 其中伪随机二进制码是利用 Produce pseudo-random code 的代码产生的。</p>
@@ -345,7 +335,7 @@ bz                 !观测分量dbxdt;dbzdt;bx;bz,视电阻率定义的分量，
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../lkl/Linux_lkl.html" class="btn btn-neutral float-left" title="第一章 MobaXterm的安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../lkl/Linux_lkl.html" class="btn btn-neutral float-left" title="Linux简明教程-鲁凯亮" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

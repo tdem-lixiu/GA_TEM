@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Fortran与Matlab混编-鲁凯亮 &mdash; GA-TEM 0.0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script type="text/javascript" src="../../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> GA-TEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/project.html">地空软件开发工作管理规范</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html">使用文档-鲁凯亮</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html#id2">学习总结-曹华科</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GA-TEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Fortran与Matlab混编-鲁凯亮</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Summarize/lkl/Fortran-Matlab_lkl.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="fortranmatlab">
+<h1>Fortran与Matlab混编-鲁凯亮<a class="headerlink" href="#fortranmatlab" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>第一章 Fortran编译器与Matlab的安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id2">
+<h3>1. Fortran编译器和Matlab下载地址<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>本套教学所用到的Fortran编译器 <code class="docutils literal notranslate"><span class="pre">Microsoft</span> <span class="pre">Visual</span> <span class="pre">Studio</span></code> +
+<code class="docutils literal notranslate"><span class="pre">Intel</span> <span class="pre">Visual</span> <span class="pre">Fortran（2013）</span></code> ，Matlab为2013a版本。</p>
+</div>
+<div class="section" id="id3">
+<h3>2. Fortran与Matlab混编的必要性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>（1）我们都知道Fortran是一门以科学计算位主旨的编程语言，但却不是一款绘图软件，
+而matlab却弥补了之一短板，通过使用混编，可以在短时间之内作出大量我们需要的图件。</p>
+<p>（2）与第三方函数库类似，通过混编，我们可以直接调用matlab中的函数库，比如matlab中的spline函数，
+这一点我觉得与调用IMSL函数库有点类似。
+综上两点，我觉得有必要接触学习两者的混编技术（不必深入，会用即可），可以大大提高我们的编程效率和工作效率。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>第二章 配置环境变量<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>1. 添加环境变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>我们在环境变量里进行配置。
+打开控制面板</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab01.png"><img alt="../../_images/Fortran-Matlab01.png" class="align-center" src="../../_images/Fortran-Matlab01.png" style="width: 400px;" /></a>
+<p>选择“大图标”方式显示，点击“系统”。然后点击“高级系统设置”。</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab02.png"><img alt="../../_images/Fortran-Matlab02.png" class="align-center" src="../../_images/Fortran-Matlab02.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab03.png"><img alt="../../_images/Fortran-Matlab03.png" class="align-center" src="../../_images/Fortran-Matlab03.png" style="width: 400px;" /></a>
+<p>然后点击“环境变量”。如下图</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab04.png"><img alt="../../_images/Fortran-Matlab04.png" class="align-center" src="../../_images/Fortran-Matlab04.png" style="width: 400px;" /></a>
+<p>在“系统变量”中，点击“新建”。</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab05.png"><img alt="../../_images/Fortran-Matlab05.png" class="align-center" src="../../_images/Fortran-Matlab05.png" style="width: 400px;" /></a>
+<p>找到Matlab2013a中 <code class="docutils literal notranslate"><span class="pre">\bin\win64</span></code> 的完整路径，笔者的完整路径为
+<code class="docutils literal notranslate"><span class="pre">E:\Program</span> <span class="pre">Files\matlab2013a\bin\win64</span></code></p>
+<p>点击“新建”之后，如下图</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab06.png"><img alt="../../_images/Fortran-Matlab06.png" class="align-center" src="../../_images/Fortran-Matlab06.png" style="width: 400px;" /></a>
+<p>“变量名”填“path”；“变量值”填Matlab2013a中 <code class="docutils literal notranslate"><span class="pre">\bin\win64</span></code> 的完整路径。如上就是我的完整路径。</p>
+<p>至此，环境变量设置完毕。重启电脑。重启电脑。重启电脑。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>第三章 混编程序测试<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>本文直接给出Fortran调用Matlab的Module（matlab.f90）以及测试程序 <code class="docutils literal notranslate"><span class="pre">test.f90</span></code> 。
+打开Fortran编译器，添加现有项 <code class="docutils literal notranslate"><span class="pre">matlab.f90</span></code> 和 <code class="docutils literal notranslate"><span class="pre">test.f90</span></code> 。然后寻找.lib路径，笔者的.lib路径为
+<code class="docutils literal notranslate"><span class="pre">E:\Program</span> <span class="pre">Files\matlab2013a\extern\lib\win64\microsoft</span></code> 。
+其中下划线并加粗的路径是绝对的，即matlab装好之后绝对有这个路径，前面的是相对路径，
+看你自己安装时如何设置安装路径。在此（你的）路径下，找到3个.lib文件添加进来。
+分别是 <code class="docutils literal notranslate"><span class="pre">libeng.lib</span></code> 、 <code class="docutils literal notranslate"><span class="pre">libmat.lib</span></code> 以及 <code class="docutils literal notranslate"><span class="pre">libmx.lib</span></code> 。添加进来后如下图所示。</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab07.png"><img alt="../../_images/Fortran-Matlab07.png" class="align-center" src="../../_images/Fortran-Matlab07.png" style="width: 400px;" /></a>
+<p>接下来，一定要确定的是你所安装的matlab是32位还是64位，安装的Fortran编译器是32位还是64位。
+如果不知道安装的是哪一个，依次点击菜单栏的“工具”》“选项”》“Intel Composer XE”》“Visual Fortran”》“Compilers”，
+在《关于IMSL7.0的安装以及使用说明》里说过，如下图</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab08.png"><img alt="../../_images/Fortran-Matlab08.png" class="align-center" src="../../_images/Fortran-Matlab08.png" style="width: 400px;" /></a>
+<p>我这里显示的是Win32和x64，说明我32位和64位的编译环境都安装了，你那儿显示的是什么就是什么编译环境，
+本质是一定要使matlab的版本和Fortran的编译环境匹配。
+（32位的matlab对应32位的Fortran编译环境；64位的matlab对应64位的Fortran编译环境）。
+怎样设置Fortran的编译环境在《关于IMSL7.0的安装以及使用说明》里说过，不再累赘。
+我使用的是64位的matlab，自然要使用64位的Fortran编译环境。配置完成之后进行测试，测试结果如下。</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab09.png"><img alt="../../_images/Fortran-Matlab09.png" class="align-center" src="../../_images/Fortran-Matlab09.png" style="width: 400px;" /></a>
+<p>最左边是matlab计算结果，右边是Fortran计算结果。计算结果正确，测试成功。
+最后一点要注意的是由于matlab里数据类型默认为double精度，所以写的子程序全部按照双精度写的。</p>
+<p>郑重声明：由于完成时间比较仓促，大家有疑问可以随时联系我。</p>
+<p>联系方式：QQ <strong>735343320</strong></p>
+<p>本文在附录后给出源代码。</p>
+<p>最后祝大家码到成功!!!</p>
+</div>
+<div class="section" id="id7">
+<h2>附录<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="section" id="test-f90">
+<h3>1. Test.f90<a class="headerlink" href="#test-f90" title="永久链接至标题">¶</a></h3>
+<div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="k">Program </span><span class="n">ls</span>
+<span class="k">Use </span><span class="n">matlab</span>
+<span class="k">Implicit None</span>
+
+<span class="kt">Integer</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">Parameter</span> <span class="kd">::</span> <span class="n">N</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">M</span><span class="o">=</span><span class="mi">100</span>
+<span class="kt">Real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Vx</span><span class="p">(</span><span class="n">M</span><span class="p">),</span><span class="n">Vy</span><span class="p">(</span><span class="n">M</span><span class="p">),</span><span class="n">Vy0</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="kt">Real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="kd">::</span> <span class="n">Mat</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">),</span><span class="n">MatI</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="kt">Integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span>
+<span class="k">Call </span><span class="nb">ranDom_seed</span><span class="p">()</span>
+<span class="k">Do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+    <span class="k">Do </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+    <span class="k">Call </span><span class="nb">ranDom_number</span><span class="p">(</span><span class="n">Mat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">))</span>
+    <span class="k">End Do</span>
+<span class="k">End Do</span>
+<span class="k">Print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot; !输出Mat在屏幕&quot;</span>
+<span class="k">Do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+    <span class="k">Write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;(5f10.5)&quot;</span><span class="p">)(</span><span class="n">Mat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="k">End Do</span>
+<span class="c">!//启动matlab</span>
+<span class="k">Call </span><span class="n">startmatlab</span><span class="p">()</span>
+<span class="c">!//将矩阵Mat传输到matlab，并在matlab中也命名为Mat</span>
+<span class="k">Call </span><span class="n">f2mmat</span><span class="p">(</span><span class="n">Mat</span><span class="p">,</span><span class="s2">&quot;Mat&quot;</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="c">!//在matlab中执行求逆，逆矩阵赋值给Mat0</span>
+<span class="k">Call </span><span class="n">mc</span><span class="p">(</span><span class="s2">&quot;Mat0=inv(Mat)&quot;</span><span class="p">)</span>
+<span class="c">!//将逆矩阵传输回fortran，赋值给MatI</span>
+<span class="k">Call </span><span class="n">m2fmat</span><span class="p">(</span><span class="n">MatI</span><span class="p">,</span><span class="s2">&quot;Mat0&quot;</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="c">!//输出MatI在屏幕</span>
+<span class="k">Print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot; !输出MatI在屏幕&quot;</span>
+<span class="k">Do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+    <span class="k">Write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;(100f10.5)&quot;</span><span class="p">)(</span><span class="n">MatI</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="k">End Do</span>
+<span class="c">!//验证是否为逆矩阵</span>
+<span class="k">Print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;!验证是否为逆矩阵&quot;</span>
+<span class="n">Mat</span><span class="o">=</span><span class="nb">Matmul</span><span class="p">(</span><span class="n">Mat</span><span class="p">,</span><span class="n">MatI</span><span class="p">);</span>
+<span class="k">Do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span>
+    <span class="k">Write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;(100f10.5)&quot;</span><span class="p">)(</span><span class="n">Mat</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="k">End Do</span>
+<span class="c">!//创建X轴数据</span>
+<span class="k">Do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">M</span>
+    <span class="n">Vx</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mi">1</span><span class="n">d0</span><span class="o">/</span><span class="mi">10</span><span class="n">d0</span>
+    <span class="n">Vy</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">=</span><span class="nb">sin</span><span class="p">(</span><span class="n">Vx</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="k">End Do</span>
+<span class="c">!//将Vx数据传输入matlab</span>
+<span class="k">Call </span><span class="n">f2mvector</span><span class="p">(</span><span class="n">Vx</span><span class="p">,</span><span class="s2">&quot;X&quot;</span><span class="p">,</span><span class="n">M</span><span class="p">)</span>
+<span class="c">!//对传入的数据求正弦并作图</span>
+<span class="k">Call </span><span class="n">mc</span><span class="p">(</span><span class="s2">&quot;Y=cos(X);plot(X,Y,&#39;-r&#39;);hold on;Y=sin(X);plot(X,Y);hold on&quot;</span><span class="p">)</span><span class="c">!重点重点</span>
+
+<span class="c">!//将求出的正弦返回fortran,赋值给Vy0</span>
+<span class="k">Call </span><span class="n">m2fvector</span><span class="p">(</span><span class="n">Vy0</span><span class="p">,</span><span class="s2">&quot;Y&quot;</span><span class="p">,</span><span class="n">M</span><span class="p">)</span>
+<span class="c">!//验证matlab计算结果和fortran计算结果对比</span>
+<span class="k">Print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;!验证matlab计算结果和fortran计算结果对比&quot;</span>
+<span class="k">Do </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span>
+    <span class="k">Write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="n">Vy</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">Vy0</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="nb">abs</span><span class="p">(</span><span class="n">Vy</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-</span><span class="n">Vy0</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="k">End Do</span>
+<span class="k">End Program </span><span class="n">ls</span>
+
+<span class="mf">2.</span> <span class="n">matlab</span><span class="p">.</span><span class="n">f90</span>
+<span class="k">module </span><span class="n">matlab</span>
+<span class="k">implicit none</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ep</span>  <span class="c">!//指针，用于指向打开的matlab</span>
+<span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">status</span>  <span class="c">!//记录命令执行结果是否有效</span>
+
+<span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">external</span><span class="kd">::</span><span class="n">engopen</span><span class="p">,</span><span class="n">engputvariable</span><span class="p">,</span><span class="n">enggetvariable</span><span class="p">,</span><span class="n">engevalstring</span><span class="p">,</span><span class="n">engclose</span>
+<span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span><span class="k">external</span><span class="kd">::</span><span class="n">MxCreateDoubleMatrix</span><span class="p">,</span><span class="n">mxgetpr</span><span class="p">,</span><span class="n">MxCreatefull</span>
+
+<span class="k">contains</span>
+
+<span class="c">!//打开matlab程序</span>
+<span class="k">subroutine </span><span class="n">startmatlab</span><span class="p">()</span>
+    <span class="k">implicit none</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;正在打开matlab程序……&quot;</span>
+    <span class="n">ep</span><span class="o">=</span><span class="n">engopen</span><span class="p">(</span><span class="s1">&#39;matlab&#39;</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">ep</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;matlab程序启动失败……&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    else</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;成功打开matlab窗口……&quot;</span>
+    <span class="n">endif</span>
+    <span class="k">call </span><span class="n">mc</span><span class="p">(</span><span class="s2">&quot;clear all&quot;</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">path</span><span class="p">()</span>      <span class="c">!//将本程序的文件目录设置为matlab使用目录,方便m文件调用</span>
+<span class="k">end  subroutine </span><span class="n">startmatlab</span>
+
+<span class="c">!//关闭matlab引用程序</span>
+<span class="k">subroutine </span><span class="n">closematlab</span><span class="p">()</span>
+    <span class="k">implicit none</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;正在关闭matlab程序……&quot;</span>
+    <span class="n">status</span><span class="o">=</span><span class="n">engclose</span><span class="p">(</span><span class="n">ep</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">status</span><span class="o">/=</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;不能关闭matlab窗口，程序结束&quot;</span>
+    <span class="k">else</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;成功关闭matlab程序&quot;</span>
+    <span class="n">endif</span>
+<span class="k">end subroutine </span><span class="n">closematlab</span>
+
+<span class="c">!//在matlab中执行命令</span>
+<span class="c">!//在matlab里执行字符串里显示的语句/或放在文件目录下的m文件名</span>
+<span class="k">subroutine </span><span class="n">mc</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="kd">::</span><span class="n">string</span>
+    <span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;matlab语句/子程序:  &quot;</span><span class="p">,</span><span class="n">string</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">engevalstring</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">string</span><span class="p">).</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;matlab执行fortran命令失败&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    </span><span class="n">endif</span>
+<span class="k">end  subroutine </span><span class="n">mc</span>
+
+
+<span class="c">!//将fortran中矩阵送到matlab中去</span>
+<span class="c">!//fdate 数组数据 msting为传入matlab之后数组名 row 矩阵行数 col为矩阵列数</span>
+<span class="k">subroutine </span><span class="n">f2mmat</span><span class="p">(</span><span class="nb">fdate</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="n">row</span><span class="p">,</span><span class="n">col</span>
+    <span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="nb">fdate</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">row</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">col</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="kd">::</span><span class="n">mstring</span>
+    <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ptemp</span><span class="p">,</span><span class="n">fu</span>    <span class="c">!//只能定义为长整形</span>
+    <span class="c">!//在matlab里申请内存</span>
+    <span class="n">ptemp</span><span class="o">=</span><span class="n">MxCreateDoubleMatrix</span><span class="p">(</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">ptemp</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;不能申请到内存&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    end if</span>
+<span class="k">    </span><span class="n">fu</span><span class="o">=</span><span class="n">mxgetpr</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxCopyReal8ToPtr</span><span class="p">(</span><span class="nb">fdate</span><span class="p">,</span><span class="n">fu</span><span class="p">,</span><span class="n">row</span><span class="o">*</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">status</span><span class="o">=</span><span class="n">engputvariable</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxDestroyArray</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;正在matlab中生成矩阵:&quot;</span><span class="p">,</span><span class="n">mstring</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;在matlab中生成矩阵失败&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    end if</span>
+<span class="k">end subroutine </span><span class="n">f2mmat</span>
+
+<span class="c">!//将matlab的矩阵返回到fortran</span>
+<span class="c">!//fdate 数组数据 msting为传入matlab之后数组名 row 矩阵行数 col为矩阵列数</span>
+<span class="k">subroutine </span><span class="n">m2fmat</span><span class="p">(</span><span class="n">ddate</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="n">row</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">integer</span><span class="o">*</span><span class="mi">8</span> <span class="n">row</span><span class="p">,</span><span class="n">col</span>
+    <span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="n">ddate</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">row</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">col</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="n">mstring</span>
+    <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="n">ptemp</span><span class="p">,</span><span class="n">fu</span>
+    <span class="n">ptemp</span><span class="o">=</span><span class="n">enggetvariable</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">mstring</span><span class="p">)</span>
+    <span class="n">fu</span><span class="o">=</span><span class="n">mxgetpr</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxCopyPtrToReal8</span><span class="p">(</span><span class="n">fu</span><span class="p">,</span><span class="n">ddate</span><span class="p">,</span><span class="n">row</span><span class="o">*</span><span class="n">col</span><span class="p">)</span>
+    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;从matlab中返回矩阵：&quot;</span><span class="p">,</span><span class="n">mstring</span>
+<span class="k">end subroutine </span><span class="n">m2fmat</span>
+
+<span class="c">!//建立matlab路径,方便将matlab的M文件放在fortran目录使用</span>
+<span class="c">!//只在matlab启动时被调用</span>
+<span class="k">subroutine </span><span class="n">path</span><span class="p">()</span>
+    <span class="kt">character</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="kd">::</span><span class="n">results</span>
+    <span class="kt">character</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span><span class="kd">::</span><span class="n">matpath</span>
+    <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">pp</span><span class="p">,</span><span class="nb">getcwd</span>
+<span class="nb">    </span><span class="n">pp</span><span class="o">=</span><span class="nb">getcwd</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+    <span class="n">matpath</span><span class="o">=</span><span class="s2">&quot;userpath(&#39;&quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="o">//</span> <span class="s2">&quot;&#39;)&quot;</span>
+    <span class="n">pp</span><span class="o">=</span><span class="n">engevalstring</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">matpath</span><span class="p">)</span>
+<span class="k">end subroutine </span><span class="n">path</span>
+
+
+<span class="c">!//将fortran的向量传输输入matlab</span>
+<span class="c">!//为了方便1维数组传输，在二维数组程序上改写获得</span>
+<span class="c">!//vector 传入matlab数组,mstring为传入matlab之后在matlab一维数组名,number元素个数</span>
+<span class="k">subroutine </span><span class="n">f2mvector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="n">number</span>
+    <span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="nb">fdate</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">number</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">vector</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="kd">::</span><span class="n">mstring</span>
+    <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ptemp</span><span class="p">,</span><span class="n">fu</span>
+    <span class="nb">fdate</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">number</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">vector</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">ptemp</span><span class="o">=</span><span class="n">MxCreateDoubleMatrix</span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">ptemp</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;不能申请到内存&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    end if</span>
+<span class="k">    </span><span class="n">fu</span><span class="o">=</span><span class="n">mxgetpr</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxCopyReal8ToPtr</span><span class="p">(</span><span class="nb">fdate</span><span class="p">,</span><span class="n">fu</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">status</span><span class="o">=</span><span class="n">engputvariable</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxDestroyArray</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;正在matlab中生成向量:&quot;</span><span class="p">,</span><span class="n">mstring</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;在matlab中生成向量失败&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    end if</span>
+<span class="k">end subroutine </span><span class="n">f2mvector</span>
+
+<span class="c">!//将matlab的向量返回到fortran</span>
+<span class="c">!//vector 传回matlab数组,mstring为传回数组在matlab之中一维数组名,number元素个数</span>
+<span class="k">subroutine </span><span class="n">m2fvector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="n">number</span>
+    <span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ddate</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">number</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">vector</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">number</span><span class="p">)</span>
+    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="kd">::</span><span class="n">mstring</span>
+    <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ptemp</span><span class="p">,</span><span class="n">fu</span>
+    <span class="n">ptemp</span><span class="o">=</span><span class="n">enggetvariable</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">mstring</span><span class="p">)</span>
+    <span class="n">fu</span><span class="o">=</span><span class="n">mxgetpr</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxCopyPtrToReal8</span><span class="p">(</span><span class="n">fu</span><span class="p">,</span><span class="n">ddate</span><span class="p">,</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">vector</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">number</span><span class="p">)</span><span class="o">=</span><span class="n">ddate</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">number</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;从matlab中返回向量：&quot;</span><span class="p">,</span><span class="n">mstring</span>
+<span class="k">end subroutine </span><span class="n">m2fvector</span>
+
+
+<span class="c">!//fotran里数值参数传递给matlab</span>
+<span class="c">!//fortran参数，mstring 传递到matlab里的数值参数名</span>
+<span class="k">subroutine </span><span class="n">f2mnumber</span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="n">mstring</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="nb">fdate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">number</span>
+    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="kd">::</span><span class="n">mstring</span>
+    <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ptemp</span><span class="p">,</span><span class="n">fu</span>
+    <span class="nb">fdate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">=</span><span class="n">number</span>
+    <span class="n">ptemp</span><span class="o">=</span><span class="n">MxCreateDoubleMatrix</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">ptemp</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;不能申请到内存&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    </span><span class="n">endif</span>
+    <span class="n">fu</span><span class="o">=</span><span class="n">mxgetpr</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxCopyReal8ToPtr</span><span class="p">(</span><span class="nb">fdate</span><span class="p">,</span><span class="n">fu</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">status</span><span class="o">=</span><span class="n">engputvariable</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxDestroyArray</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">print</span><span class="o">*</span><span class="p">,</span><span class="s2">&quot;正在matlab中生成值:&quot;</span><span class="p">,</span><span class="n">mstring</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="p">.</span><span class="n">ne</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="k">then</span>
+<span class="k">    write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;在matlab中生成&quot;</span><span class="p">,</span><span class="n">mstring</span><span class="p">,</span><span class="s2">&quot;值失败&quot;</span>
+    <span class="k">stop</span>
+<span class="k">    end if</span>
+<span class="n">endsubroutine</span> <span class="n">f2mnumber</span>
+
+<span class="c">!//将matlab的数值返回到fortran</span>
+<span class="c">!//numer,传递回数值参数，msting传回数值在matlab中参数名</span>
+<span class="k">subroutine </span><span class="n">m2fnumber</span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="n">mstring</span><span class="p">)</span>
+    <span class="k">implicit none</span>
+<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ddate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">number</span>
+    <span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="kd">::</span><span class="n">mstring</span>
+    <span class="kt">integer</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span><span class="kd">::</span><span class="n">ptemp</span><span class="p">,</span><span class="n">fu</span>
+    <span class="n">ptemp</span><span class="o">=</span><span class="n">enggetvariable</span><span class="p">(</span><span class="n">ep</span><span class="p">,</span><span class="n">mstring</span><span class="p">)</span>
+    <span class="n">fu</span><span class="o">=</span><span class="n">mxgetpr</span><span class="p">(</span><span class="n">ptemp</span><span class="p">)</span>
+    <span class="k">call </span><span class="n">mxCopyPtrToReal8</span><span class="p">(</span><span class="n">fu</span><span class="p">,</span><span class="n">ddate</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">number</span><span class="o">=</span><span class="n">ddate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span><span class="s2">&quot;从matlab中返回值：&quot;</span><span class="p">,</span><span class="n">mstring</span>
+<span class="k">end subroutine </span><span class="n">m2fnumber</span>
+<span class="k">end module </span><span class="n">matlab</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>声明<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>本文主要参考Fortran Coder研讨群中的《Fortran与matlab混编》</p>
+<a class="reference internal image-reference" href="../../_images/Fortran-Matlab10.png"><img alt="../../_images/Fortran-Matlab10.png" class="align-center" src="../../_images/Fortran-Matlab10.png" style="width: 400px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jing Xu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
