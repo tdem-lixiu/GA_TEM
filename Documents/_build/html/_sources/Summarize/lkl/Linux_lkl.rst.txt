@@ -1,5 +1,8 @@
+Linux简明教程-鲁凯亮
+*********************
+
 第一章 MobaXterm的安装
-=====================
+======================
 
 1. 安装MobaXterm Personal Edition
 :::::::::::::::::::::::::::::::::
@@ -7,15 +10,36 @@
 
 （1）下载并解压，以管理员身份运行MobeXter-Setup-7.0.msi，进入安装界面。
 
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-01.png
+  :width: 400px
+  :align: center
+
 （2）选择 **next** ，进入下一步。
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-02.png
+  :width: 400px
+  :align: center
 
 （3）选择“接受条款”，点击 **next** 。
 
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-03.png
+  :width: 400px
+  :align: center
+
 （4）选择安装路径，本次示范选择默认路径，点击 **next** 。
 
-（5）安装完成，点击 **finish** 。安装完成后，将安装包内的Git.mxt3复制到 ``C:\\Program files(x86)\Mobatek\MobaXterm Personal Edition\`` 中文件夹内。
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-04.png
+  :width: 400px
+  :align: center
+
+（5）安装完成，点击 **finish** 。安装完成后，将安装包内的Git.mxt3复制到
+``C:\\Program files(x86)\Mobatek\MobaXterm Personal Edition\`` 中文件夹内。
 （依据你自己的安装路径）
 双击快捷方式，打开软件，界面如下所示
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-05.png
+  :width: 600px
+  :align: center
 
 2. 服务器的登陆与退出
 :::::::::::::::::::::::::::::::::
@@ -27,19 +51,31 @@
 比如鲁凯亮的就是
 
 .. centered:: ssh lkl@192.168.199.101
-输入完账号后，按回车键输入密码
 
-输入密码时，不会像windows操作系统那样显示成 ``******`` ，不用理会，只管输入自己的密码，前提是保证密码正确。（密码一般默认为 ``tdemusernametdem`` ，例如鲁凯亮的密码就是 ``tdemlkltdem`` ）。输入密码之后，就可以进去操作界面了。下面一章将会介绍简单的操作命令行。退出的时候直接在界面输入 **exit** 。或者直接叉掉界面就行。 
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-06.png
+  :width: 400px
+  :align: center
+
+输入完账号后，按回车键输入密码。
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-07.png
+  :width: 400px
+  :align: center
+
+输入密码时，不会像windows操作系统那样显示成 ``******`` ，不用理会，只管输入自己的密码，前提是保证密码正确。
+（密码一般默认为 ``tdemusernametdem`` ，例如鲁凯亮的密码就是 ``tdemlkltdem`` ）。
+输入密码之后，就可以进去操作界面了。
+下面一章将会介绍简单的操作命令行。退出的时候直接在界面输入 **exit** 。或者直接叉掉界面就行。
 
 第二章 文件处理命令
-==================
+===================
 
 1. ls
 :::::::::::::::::::::::::::::::::
 
-.. Note:: 命令英文原意：list 
+.. Note:: 命令英文原意：list
 
-命令所在路径： ``/bin/ls`` 
+命令所在路径： ``/bin/ls``
 
 执行权限：所有用户
 
@@ -146,7 +182,7 @@
 
     cp -R [源文件或目录] [目的目录]
 
-    -R 复制目录 
+    -R 复制目录
 
 功能描述：复制文件或目录
 
@@ -372,7 +408,7 @@
 
 .. Note:: 命令英文原意：change file group ownership
 
-命令所在路径： ``/bin/chgrp`` 
+命令所在路径： ``/bin/chgrp``
 
 执行权限：所有用户
 
@@ -384,10 +420,10 @@
 
 范例：
 
-.. centered:: chown  adm  file1  改写文件file1的所属组为adm 
+.. centered:: chown  adm  file1  改写文件file1的所属组为adm
 
 第四章 文件搜索命令
-==================
+===================
 
 1. which
 :::::::::::::::::::::::::::::::::
@@ -460,9 +496,9 @@
 范例：
 
 .. centered:: grep  ftp  /etc/services
-   
+
 第五章 帮助命令
-==============
+===============
 1. man
 :::::::::::::::::::::::::::::::::
 
@@ -483,7 +519,7 @@
 .. centered:: man ls  查看ls命令的帮助信息
 .. centered:: man services  查看配置文件services的帮助信息
 
-2. info 
+2. info
 :::::::::::::::::::::::::::::::::
 
 .. Note:: 命令英文原意：information
@@ -505,8 +541,8 @@
 3. whatis
 :::::::::::::::::::::::::::::::::
 
-命令所在路径： ``/usr/bin/whatis apropos`` 
-``/usr/bin/makewhatis`` 
+命令所在路径： ``/usr/bin/whatis apropos``
+``/usr/bin/makewhatis``
 
 执行权限：所有用户
 
@@ -519,7 +555,7 @@
 范例：
 
 .. centered:: whatis ls  查看ls命令的帮助信息
- 
+
 第六章 压缩解压命令
 ====================
 
@@ -586,7 +622,7 @@
 
 tar命令解压缩语法
 
-.. code:: 
+.. code::
 
     -x  解包.tar文件
     -v  显示详细信息
@@ -633,10 +669,10 @@ tar命令解压缩语法
 
 范例：
 
-.. centered:: unzip  test.zip  /test 
+.. centered:: unzip  test.zip  /test
 
 第七章 文件上传与下载以及注意事项
-===============================
+=================================
 
 1. 文件上传与下载
 :::::::::::::::::::::::::::::::::
@@ -682,7 +718,9 @@ tar命令解压缩语法
 
 .. centered:: more  shuju.dat
 
-（7）通配符。这里说一个比较常用的通配符 ``*`` 。例如在 ``work`` 目录下有成百上千个 ``**.dat`` 文件和很多其他文件，一个个删除dat文件显然是一个很笨蛋的方法，这里通配符*就起到了很大的作用，输入下面命令
+（7）通配符。这里说一个比较常用的通配符 ``*`` 。
+例如在 ``work`` 目录下有成百上千个 ``**.dat`` 文件和很多其他文件，一个个删除dat文件显然是一个很笨蛋的方法，
+这里通配符*就起到了很大的作用，输入下面命令
 
 .. centered:: rm  -r  *.dat
 
@@ -691,3 +729,380 @@ tar命令解压缩语法
 （8）中断一个不需要的进程： ``Ctrl+C`` 。这里不是windows下复制的意思。
 
 （9）杀死一个失控进程。首先在终端（即界面）输入top命令，查看自己想要杀掉的进程的PID号，（即执行程序exe前面的数字）。输入k，然后输入对应的PID号，回车即可。
+
+第八章 运行程序
+===============
+
+1. 修改目标目录权限
+:::::::::::::::::::
+
+上传源代码和数据文件之后，首先应该修改上传文件夹（目录）的权限，使用下面命令
+
+.. centered:: chmod  755  filename
+
+这样操作之后才能进行编译。
+
+2. 编辑程序
+::::::::::::
+
+这一块笔者介绍两种编辑方式。一个是使用emacs；另一个是gedit。笔者在此不详细介绍vim编辑，因为要讲vim编辑，其内容特别多。
+感兴趣的可以自己学习，网上有很多资料，笔者在这里给出一份学习资料，仅供有兴趣的人学习。
+``http://pan.baidu.com/s/1nvz31FV``
+
+为什么介绍emacs和gedit，因为这两种编辑方式与windows下编辑程序很相似，都是界面操作，易学上手。下面举个例子
+
+.. centered:: emacs source1.f90
+
+.. centered:: gedit source1.f90
+
+这两句命令都是指对 ``source.f90`` 进行编辑。输入命令回车后，会弹出一个界面，此时就是纯界面对程序编辑了，很简单。
+
+如果在linux上要对代码批量注释，可用下面的命令：
+
+:起始行号,结束行号s/^/注释符/g
+
+例如： ``:10,20s/^/!/g`` 是对第十行到第二十行代码进行注释。
+
+例如： ``:10,20s/^!//g`` 是对第十行到第二十行代码取消注释。
+
+3. 编译程序
+::::::::::::
+
+本套教程只介绍gfortran编译器和ifort编译器。首先说gfortran编译器。输入下面命令
+
+.. centered:: gfortran  -o  lkl.exe  source1.f90
+
+一键完成编译和链接。然后输入执行命令
+
+.. centered:: ./lkl.exe
+
+这款编译器了解即可。
+
+下来说说ifort编译器。和gfortran编译器类似，输入命令
+
+.. centered:: ifort  -o  lkl.exe  source1.f90
+
+然后输入命令
+
+.. centered:: ulimit  -s  unlimited
+
+这句命令的意思是在执行程序时，使程序在计算时对堆栈不设置大小。最后输入
+
+.. centered:: nohup  ./lkl.exe
+
+这个语句也很重要。它的意思是执行程序的时候你可以将终端关闭。
+一般来说，如果简单地使用 ``./exe`` 来执行程序，关闭终端后，运行的程序也就终止了。这条命令显然可以避免这种情况的发生。
+
+如果有多个f90程序需要同时编译，还记得我们上面讲的通配符吗？在这里就起到了很大的作用。
+例如有好几个f90程序要同时编译，直接输入下面命令
+
+.. centered:: ifort  -o  lkl.exe  *.f90
+
+4. make编译程序
+::::::::::::::::
+
+make命令读取makefile中的设置，然后进行编译工作，主要用在大型工程的开发编译工作中，
+在命令行环境下，使用make最直观的好处是可以省去对同一个程序同一个编译选项情况下每次的编译命令输入。
+在编译时，仅需输入make，即可由先前定义的编译选项来编译自己的程序。
+
+这里简单地介绍一个makefile。首先建立makefile文本文件，输入命令
+
+.. centered:: touch  makefile
+
+然后输入gedit或是emacs（你如果原意，也可以用vim编辑），以emacs为例
+
+.. centered:: emacs  makefile
+
+然后在界面中写入
+
+.. code:: makefile
+
+    lkl.exe:*.f90
+        ifort -o lkl.exe *.f90
+    clean:
+        rm -rf *.exe *.mod *.dat
+
+然后保存退出。此时输入命令 ``make``
+
+就相当于前面的命令
+
+.. centered:: ifort  -o  lkl.exe  *.f90
+
+如果想要清除以前产生的数据文件，输入命令 ``make clean``
+
+相当于执行命令
+
+.. centered:: rm  -rf  *.exe  *.mod  *.dat
+
+5. gdb调试
+:::::::::::
+
+Intel以及PGI均提供了debug程序，分别是：gdb和pgdbg，在界面中输入这两个命令即可调用相应的调试程序，
+基本操作与Microsoft Visual Studio无本质差异。个人建议，debuger与程序内手动设置断点与输出等方法结合使用。
+在gdb中可以考虑与Emacs连用，调用命令行版本debuger。接下来简单地介绍一下idb调试。下面的例子是一个九九乘法表的小程序。
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-08.png
+  :width: 400px
+  :align: center
+
+（1）生成可执行文件
+-------------------
+
+.. centered:: ifort  -g  hello.f90  -o  test.exe
+
+其中参数 ``-g`` 必须写。
+
+（2）启动idb并添加可执行文件test.exe
+--------------------------------------
+
+.. centered:: gdb test.exe
+
+窗口如下所示
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-09.png
+  :width: 400px
+  :align: center
+
+可在光标内输入l（list的简写，不是阿拉伯数字“1”）。
+
+（3）运行程序。
+----------------
+在光标处输入r（注意调试的时候要将调试界面和MobaXterm窗口界面协同使用），输出结果如下
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-10.png
+  :width: 400px
+  :align: center
+
+此次整理先就此结束。以后有时间和内容再完善此手册。
+
+6. gdb调试的相关命令说明
+:::::::::::::::::::::::::
+
+.. list-table::
+
+    * - 命令参数
+      - 参数说明
+    * - l
+      - 显示test.f90源代码内容（list简写）
+    * - break  num
+      - 在源代码第num行设置断点
+    * - break  fun
+      - 在自定义函数func入口处设置断点
+    * - info  break
+      - 查看断点信息
+    * - info  locals
+      - 查看局部变量信息
+    * - r
+      - 开始执行程序
+    * - n
+      - 没输入一次n,执行一句语句
+    * - c
+      - 继续运行程序，如到断点位置终止执行（continue的简写）
+    * - p  j
+      - 输出变量j当前值（print简写）
+    * - bt
+      - 查看函数堆栈
+    * - Quit
+      - 退出debug
+    * - help  breakpoints
+      - 查看设置断点的所有命令
+
+7. MKL函数库的使用
+::::::::::::::::::::
+
+MKL函数库是ifort自带的函数库，不用另行安装。但是像MKL函数库中的Lapack函数库，在Linux下gfortran编译器使用Lapack时是要单独安装的。
+Lapack函数库的镜像文件可以在Lapack的官网上下载。 ``http://www.netlib.org/lapack/``
+
+在使用MKL函数库之前要进行相关设置。即在自己的家目录下中的.bashrc中进行设置，
+或者在 ``/etc/profile`` 中进行设置。（这种设置适合工作站或者服务器）
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-11.png
+  :width: 600px
+  :align: center
+
+本文在这里给出一个在Linux下的程序。如下所示
+
+.. code:: Fortran
+
+    Program TestMKL
+        IMPLICIT NONE
+        DOUBLE PRECISION ALPHA, BETA
+        INTEGER          M, K, N, I, J
+        PARAMETER        (M=2000, K=200, N=1000)
+        DOUBLE PRECISION A(M,K), B(K,N), C(M,N)
+
+        PRINT *, "This example computes real matrix C=alpha*A*B+beta*C"
+        PRINT *, "using Intel® MKL function dgemm, where A, B, and C"
+        PRINT *, "are matrices and alpha and beta are double precision "
+        PRINT *, "scalars"
+        PRINT *, ""
+        PRINT *, "Initializing data for matrix multiplication C=A*B for "
+        PRINT 10, " matrix A(",M," x",K, ") and matrix B(", K," x", N, ")"
+
+    10    FORMAT(a,I5,a,I5,a,I5,a,I5,a)
+        PRINT *, ""
+        ALPHA = 1.0
+        BETA = 0.0
+        PRINT *, "Intializing matrix data"
+        PRINT *, ""
+        DO I = 1, M
+            DO J = 1, K
+            A(I,J) = (I-1) * K + J
+            END DO
+        END DO
+        DO I = 1, K
+            DO J = 1, N
+            B(I,J) = -((I-1) * N + J)
+            END DO
+        END DO
+        DO I = 1, M
+            DO J = 1, N
+            C(I,J) = 0.0
+            END DO
+        END DO
+
+        PRINT *, "Computing matrix product using Intel® MKL DGEMM "
+        PRINT *, "subroutine"
+        CALL DGEMM('N','N',M,N,K,ALPHA,A,M,B,K,BETA,C,M)
+        PRINT *, "Computations completed."
+        PRINT *, ""
+        PRINT *, "Top left corner of matrix A:"
+        PRINT 20, ((A(I,J), J = 1,MIN(K,6)), I = 1,MIN(M,6))
+        PRINT *, ""
+        PRINT *, "Top left corner of matrix B:"
+        PRINT 20, ((B(I,J),J = 1,MIN(N,6)), I = 1,MIN(K,6))
+        PRINT *, ""
+
+    20   FORMAT(6(F12.0,1x))
+        PRINT *, "Top left corner of matrix C:"
+        PRINT 30, ((C(I,J), J = 1,MIN(N,6)), I = 1,MIN(M,6))
+        PRINT *, ""
+
+    30   FORMAT(6(ES12.4,1x))
+        PRINT *, "Example completed."
+
+    End Program TestMKL
+
+生成可执行文件 ``a.out``
+
+.. centered:: ifort  TestMKL.f90  -mkl  -o  a.out
+
+.. centered:: ./  a.out
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-12.png
+  :width: 600px
+  :align: center
+
+7.1 Lapack的F77接口
+--------------------
+
+范例代码 ``test_lapack.f90`` 如下：
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-13.png
+  :width: 600px
+  :align: center
+
+在这个例子中，使用了MKL函数库中的sgesv函数，其中对应的call语句我们称为接口，此接口为F77接口。
+关于接口的详细说明，请参考MKL帮助手册，在IVF的安装目录下查找该帮助手册。
+F77的接口缺点是参数较多，但执行命令简单。执行命令如下
+
+.. centered:: ifort  -mkl  test_lapack.f90  -o  a.out
+.. centered:: ./  a.out
+
+7.2 Lapack的F95接口
+--------------------
+
+范例代码test_lapack95.f90如下：
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-14.png
+  :width: 600px
+  :align: center
+
+在此范例中，用的MKL函数库中的gesv函数。（sgesv与gesv的区别可参考MKL帮助手册）
+我们注意到，F77接口与F95接口使用的区别有以下几点：
+
+(1) 使用F95接口需要书写use lapack95；
+
+(2) F95接口书写简单，参数较少。
+
+(3) 使用F95接口的执行命令稍微复杂一些。
+
+首先要在你的安装目录下找到对应的lib文件。Lapack95接口对应的lib文件为libmkl_lapack95_lp64.a（linux下文件的后缀名与win下的文件后缀名不同）。在ivf的安装目录下，找到该文件并复制到与test_lapack95.f90相同的目录下。
+执行F95接口的命令如下：
+
+.. centered:: ifort  -mkl  test_lapack95.f90  libmkl_lapack95_lp64.a  -o  a.out
+.. centered:: ./  a.out
+
+8. OpenMP的使用
+::::::::::::::::
+
+OpenMP的含义本文在此就不做说明了，想要了解的可以自行百度。
+由于本人能力有限，有关OpenMP的内容本文不做说明（后续可能会适当的添加），可参考OpenMP手册和《Fortran95并行编程_OpenMP》。
+附下载地址 ``http://pan.baidu.com/s/1c1Lsbcc``
+
+本人在这里给出测试代码与测试方式，OpenMP的学习互相学习吧。测试代码如下，此代码的主要功能是计算0-pi/2之间正弦函数所围的面积，
+并比较串行和并行所花费的时间。
+
+.. code:: Fortran
+
+    Program TestOpenMP
+        !reduction,private的使用
+        !use omp_lib
+        implicit none
+        Include 'omp_lib.h'
+        real(8)::low,up,pi
+        integer(8)::steps,i
+        real(8)::dx,x,res
+        integer(8)::start,finish
+
+        write(*,'("线程数为:",g0)') omp_get_num_procs()
+        write(*,'("请输入积分的段数:")')
+        read(*,*) steps
+        write(*,'("请输入积分的区间:")')
+        read(*,*) low,up
+
+        pi=4.d0*Atan(1.d0)
+        up=up*pi
+        dx=(up-low)/steps
+
+        call SYSTEM_CLOCK(start)
+        res=0.d0
+        do i=1,steps
+            x=low+(i-1)*dx
+            res=res+(dcos(x)+dcos(x+dx))*dx/2.d0
+        enddo
+        call SYSTEM_CLOCK(finish)
+        write(*,'("串行运算结果为:",g0)') res
+        write(*,'("串行运算时间为:",g0)') finish-start
+        write(*,*) "------------------------------"
+
+        res=0.d0
+        call SYSTEM_CLOCK(start)
+        !$OMP PARALLEL private(x) shared(dx)
+        !$OMP DO reduction(+:res)
+        do i=1,steps
+            x=low+(i-1)*dx
+            res=res+(dcos(x)+dcos(x+dx))*dx/2.d0
+        enddo
+        !$OMP END DO
+        !$OMP END PARALLEL
+        call SYSTEM_CLOCK(finish)
+
+        write(*,'("并行运算结果为:",g0)') res
+        write(*,'("并行运算时间为:",g0)') finish-start
+        write(*,*) "------------------------------"
+
+    End Program TestOpenMP
+
+生成可执行文件 ``a.out``
+
+.. centered:: ifort  TestOpenMP.f90  -fopenmp  -o  a.out
+.. centered:: ./a,out
+
+执行结果如下
+
+.. image:: ./../../Imgs/Img_Linux_lkl/Linux-15.png
+  :width: 400px
+  :align: center
+
+可以看出，总线程数为40线程。而且并行计算的时间比串行计算的时间要少10倍以上。

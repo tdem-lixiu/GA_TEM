@@ -1,7 +1,7 @@
 使用文档-鲁凯亮
 **************
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    lkl/Linux_lkl
 
