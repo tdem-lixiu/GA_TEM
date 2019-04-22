@@ -147,7 +147,7 @@ FAT格式下的U盘挂载
     export LD_LIBRARY_PATH
     =$LD_LIBRARY_PATH:/opt/intel2017/mkl/lib/intel64
 
-保存修改，并关闭.bashrc文件
+保存修改，并关闭 ``.bashrc`` 文件
 
 （5）使环境变量生效
 
