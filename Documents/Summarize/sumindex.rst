@@ -22,3 +22,4 @@
    :maxdepth: 1
 
    jx/test
+   jx/software
