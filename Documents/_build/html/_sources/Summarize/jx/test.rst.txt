@@ -7,7 +7,7 @@ Kirchhoff积分公式推导
 
 .. math::
 
-    \varphi\left(x_{1}, y_{1}, z_{1}\right)=-\frac{1}{4 \pi} \oint_{Q}\left\{[\varphi] \frac{\partial}{\partial n}\left(\frac{1}{r}\right)-\frac{1}{r}\left[\frac{\partial r}{\partial n}\right]-\frac{1}{v r}\left[\frac{\partial \varphi}{\partial t}\right]\right\} d Q
+    \varphi \left( {{x}_{1}},{{y}_{1}},{{z}_{1}} \right)=-\frac{1}{4\pi }\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc}\nolimits_Q\left\{ [\varphi ]\frac{\partial }{\partial n}\left( \frac{1}{r} \right)-\frac{1}{r}\left[ \frac{\partial r}{\partial n} \right]-\frac{1}{vr}\left[ \frac{\partial \varphi }{\partial t} \right] \right\}dQ
 
 :math:`[\varphi]` 为延时位，
 :math:`\varphi\left(x, y, z, t-\frac{r}{V}\right)=[\varphi]`
