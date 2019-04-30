@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API for Ground-Airborne Transient Electromagnetic Method System &mdash; GA-TEM 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="平台使用预备知识点" href="Learn_github.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> GA-TEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/project.html">地空软件开发工作管理规范</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html">使用文档-鲁凯亮</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html#id2">学习总结-曹华科</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../sumindex.html#id3">测试</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="test.html">Kirchhoff积分公式推导</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html">成熟地球物理软件情况</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Learn_github.html">平台使用预备知识点</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">API for Ground-Airborne Transient Electromagnetic Method System</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-calculation">Module Calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#class-convert-msh">1.class Convert_msh()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class-calc1dfwd">2.class Calc1DFwd()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class-calc1dfwd-p">3.class Calc1DFwd_p()</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-table">Module Table</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#class-tablewindow">1.class TableWindow()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class-filteredtablewidget">2.class FilteredTableWidget()</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-module">Other Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#class-login">1.class login()</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mainwindow">MainWindow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#class-class-ui-mainwindow">1.class class Ui_MainWindow()</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#class-mymainwindow">2.class MyMainWindow()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GA-TEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../sumindex.html">使用文档-鲁凯亮</a> &raquo;</li>
+        
+      <li>API for Ground-Airborne Transient Electromagnetic Method System</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Summarize/jx/API.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-for-ground-airborne-transient-electromagnetic-method-system">
+<h1>API for Ground-Airborne Transient Electromagnetic Method System<a class="headerlink" href="#api-for-ground-airborne-transient-electromagnetic-method-system" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-calculation">
+<h2>Module Calculation<a class="headerlink" href="#module-calculation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-convert-msh">
+<h3>1.class Convert_msh()<a class="headerlink" href="#class-convert-msh" title="Permalink to this headline">¶</a></h3>
+<p>Convert GiD mesh file.</p>
+<dl class="function">
+<dt>
+<code class="descname">def initUI()</code></dt>
+<dd><p>Initialization interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>initmodel_bt</strong> (<em>QPushButton</em>) – connect <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">initmodel</span></code></p></li>
+<li><p><strong>mshfile_bt</strong> (<em>QPushButton</em>) – connect <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">mshfile</span></code></p></li>
+<li><p><strong>mshconvert_bt</strong> (<em>QPushButton</em>) – connect <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">startconvert</span></code></p></li>
+<li><p><strong>vbox1</strong> (<em>QVBoxLayout</em>) – Vertically arranged icons</p></li>
+<li><p><strong>bg1</strong> (<em>QButtonGroup</em>) – Radio button rule</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">def initmodel()</code></dt>
+<dd><p>Initialization model parameters.</p>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">def mshfile()</code></dt>
+<dd><p>Get the filename from folder tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Absolute path of mesh file</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">def startconvert()</code></dt>
+<dd><p>Convert GiD mesh file to forward model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_para</strong> (np.array, <code class="docutils literal notranslate"><span class="pre">dtype='i4'</span></code> , <code class="docutils literal notranslate"><span class="pre">order='f'</span></code>) – connect <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">initmodel</span></code></p></li>
+<li><p><strong>calc_flag</strong> (<em>int</em>) – Convert type</p></li>
+<li><p><strong>calc_lib</strong> (<em>cdll.library</em>) – GiD2TEM_zn.dll</p></li>
+<li><p><strong>convert_reply</strong> (<em>QMessageBox</em>) – Completion feedback information</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<code class="descname">def rbclicked()</code></dt>
+<dd><p>Get radio button information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>calc_flag</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="class-calc1dfwd">
+<h3>2.class Calc1DFwd()<a class="headerlink" href="#class-calc1dfwd" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="class-calc1dfwd-p">
+<h3>3.class Calc1DFwd_p()<a class="headerlink" href="#class-calc1dfwd-p" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="module-table">
+<h2>Module Table<a class="headerlink" href="#module-table" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-tablewindow">
+<h3>1.class TableWindow()<a class="headerlink" href="#class-tablewindow" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="class-filteredtablewidget">
+<h3>2.class FilteredTableWidget()<a class="headerlink" href="#class-filteredtablewidget" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="other-module">
+<h2>Other Module<a class="headerlink" href="#other-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-login">
+<h3>1.class login()<a class="headerlink" href="#class-login" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="mainwindow">
+<h2>MainWindow<a class="headerlink" href="#mainwindow" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-class-ui-mainwindow">
+<h3>1.class class Ui_MainWindow()<a class="headerlink" href="#class-class-ui-mainwindow" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="class-mymainwindow">
+<h3>2.class MyMainWindow()<a class="headerlink" href="#class-mymainwindow" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Learn_github.html" class="btn btn-neutral float-left" title="平台使用预备知识点" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jing Xu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

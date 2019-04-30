@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fortran与Matlab混编-鲁凯亮 &mdash; GA-TEM 0.0.1 文档</title>
+  <title>Fortran与Matlab混编-鲁凯亮 &mdash; GA-TEM 0.0.1 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -35,8 +34,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Centos7上安装ifort2013使用说明-鲁凯亮" href="CentOS-ifort_lkl.html" />
     <link rel="prev" title="Linux简明教程-鲁凯亮" href="Linux_lkl.html" /> 
 </head>
@@ -182,16 +181,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fortranmatlab">
-<h1>Fortran与Matlab混编-鲁凯亮<a class="headerlink" href="#fortranmatlab" title="永久链接至标题">¶</a></h1>
+<h1>Fortran与Matlab混编-鲁凯亮<a class="headerlink" href="#fortranmatlab" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>第一章 Fortran编译器与Matlab的安装<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>第一章 Fortran编译器与Matlab的安装<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h3>1. Fortran编译器和Matlab下载地址<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<h3>1. Fortran编译器和Matlab下载地址<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>本套教学所用到的Fortran编译器 <code class="docutils literal notranslate"><span class="pre">Microsoft</span> <span class="pre">Visual</span> <span class="pre">Studio</span></code> +
 <code class="docutils literal notranslate"><span class="pre">Intel</span> <span class="pre">Visual</span> <span class="pre">Fortran（2013）</span></code> ，Matlab为2013a版本。</p>
 </div>
 <div class="section" id="id3">
-<h3>2. Fortran与Matlab混编的必要性<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<h3>2. Fortran与Matlab混编的必要性<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>（1）我们都知道Fortran是一门以科学计算位主旨的编程语言，但却不是一款绘图软件，
 而matlab却弥补了之一短板，通过使用混编，可以在短时间之内作出大量我们需要的图件。</p>
 <p>（2）与第三方函数库类似，通过混编，我们可以直接调用matlab中的函数库，比如matlab中的spline函数，
@@ -200,9 +199,9 @@
 </div>
 </div>
 <div class="section" id="id4">
-<h2>第二章 配置环境变量<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>第二章 配置环境变量<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id5">
-<h3>1. 添加环境变量<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<h3>1. 添加环境变量<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>我们在环境变量里进行配置。
 打开控制面板</p>
 <a class="reference internal image-reference" href="../../_images/Fortran-Matlab01.png"><img alt="../../_images/Fortran-Matlab01.png" class="align-center" src="../../_images/Fortran-Matlab01.png" style="width: 400px;" /></a>
@@ -222,7 +221,7 @@
 </div>
 </div>
 <div class="section" id="id6">
-<h2>第三章 混编程序测试<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>第三章 混编程序测试<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>本文直接给出Fortran调用Matlab的Module（matlab.f90）以及测试程序 <code class="docutils literal notranslate"><span class="pre">test.f90</span></code> 。
 打开Fortran编译器，添加现有项 <code class="docutils literal notranslate"><span class="pre">matlab.f90</span></code> 和 <code class="docutils literal notranslate"><span class="pre">test.f90</span></code> 。然后寻找.lib路径，笔者的.lib路径为
 <code class="docutils literal notranslate"><span class="pre">E:\Program</span> <span class="pre">Files\matlab2013a\extern\lib\win64\microsoft</span></code> 。
@@ -248,9 +247,9 @@
 <p>最后祝大家码到成功!!!</p>
 </div>
 <div class="section" id="id7">
-<h2>附录<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<h2>附录<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="test-f90">
-<h3>1. Test.f90<a class="headerlink" href="#test-f90" title="永久链接至标题">¶</a></h3>
+<h3>1. Test.f90<a class="headerlink" href="#test-f90" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-Fortran notranslate"><div class="highlight"><pre><span></span><span class="k">Program </span><span class="n">ls</span>
 <span class="k">Use </span><span class="n">matlab</span>
 <span class="k">Implicit None</span>
@@ -498,7 +497,7 @@
 </div>
 </div>
 <div class="section" id="id8">
-<h2>声明<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<h2>声明<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>本文主要参考Fortran Coder研讨群中的《Fortran与matlab混编》</p>
 <a class="reference internal image-reference" href="../../_images/Fortran-Matlab10.png"><img alt="../../_images/Fortran-Matlab10.png" class="align-center" src="../../_images/Fortran-Matlab10.png" style="width: 400px;" /></a>
 </div>
