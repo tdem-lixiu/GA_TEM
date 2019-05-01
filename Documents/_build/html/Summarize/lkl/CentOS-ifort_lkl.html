@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Centos7上安装ifort2013使用说明-鲁凯亮 &mdash; GA-TEM 0.0.1 文档</title>
+  <title>Centos7上安装ifort2013使用说明-鲁凯亮 &mdash; GA-TEM 0.0.1 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
         <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
@@ -35,8 +34,8 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="航空TEM程序总结-曹华科" href="../chk/ATEM1D.html" />
     <link rel="prev" title="Fortran与Matlab混编-鲁凯亮" href="Fortran-Matlab_lkl.html" /> 
 </head>
@@ -173,13 +172,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="centos7ifort2013">
-<h1>Centos7上安装ifort2013使用说明-鲁凯亮<a class="headerlink" href="#centos7ifort2013" title="永久链接至标题">¶</a></h1>
+<h1>Centos7上安装ifort2013使用说明-鲁凯亮<a class="headerlink" href="#centos7ifort2013" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="intel-fortran">
-<h2>1. 下载Intel Fortran<a class="headerlink" href="#intel-fortran" title="永久链接至标题">¶</a></h2>
+<h2>1. 下载Intel Fortran<a class="headerlink" href="#intel-fortran" title="Permalink to this headline">¶</a></h2>
 <p>本文先给出linux系统下ifort2013的下载地址， <code class="docutils literal notranslate"><span class="pre">http://pan.baidu.com/s/1qY30xcg</span></code></p>
 </div>
 <div class="section" id="u">
-<h2>2.U盘导入<a class="headerlink" href="#u" title="永久链接至标题">¶</a></h2>
+<h2>2.U盘导入<a class="headerlink" href="#u" title="Permalink to this headline">¶</a></h2>
 <p>首先要做的工作是确定你的U盘格式，插入U盘，右击，点击“属性”。</p>
 <a class="reference internal image-reference" href="../../_images/CentOS-ifort-01.png"><img alt="../../_images/CentOS-ifort-01.png" class="align-center" src="../../_images/CentOS-ifort-01.png" style="width: 400px;" /></a>
 <p>可以看到我的U盘为ntfs格式，需要安装ntfs-3g的插件，而且没有yum源，需要下载，比较麻烦。
@@ -209,7 +208,7 @@
 <strong>cd  /home/lkl/ifort2013</strong></p><p>至此，准备工作已经做完。</p>
 </div>
 <div class="section" id="ntfs">
-<h2>3. NTFS格式处理<a class="headerlink" href="#ntfs" title="永久链接至标题">¶</a></h2>
+<h2>3. NTFS格式处理<a class="headerlink" href="#ntfs" title="Permalink to this headline">¶</a></h2>
 <p>如果U盘格式是NTFS格式，而且你的linux物理机上安装了ntfs-3g的插件</p>
 <p>（1）同样地，先查看分区概况</p>
 <p class="centered">
@@ -218,7 +217,7 @@
 <strong>mount  –t  ntfs-3g  /dev/sdb1  /mnt/usb（前面已经建立了挂载点/mnt/usb）</strong></p><p>接下里的操作步骤与U盘是FAT格式下的操作相同，不再累赘。</p>
 </div>
 <div class="section" id="ifort">
-<h2>4. 安装ifort<a class="headerlink" href="#ifort" title="永久链接至标题">¶</a></h2>
+<h2>4. 安装ifort<a class="headerlink" href="#ifort" title="Permalink to this headline">¶</a></h2>
 <p>（1）解压压缩包</p>
 <p class="centered">
 <strong>tar  –zxvf  <a href="#id5"><span class="problematic" id="id6">*</span></a>.tgz</strong></p><p>为了方便，我将*.lic文件名修改为ifort2013.lic</p>
@@ -263,7 +262,7 @@
 <strong>ifort  –v</strong></p><p>如果显示版本信息，则安装正确（我的版本为ifort version 17.0.4）。即2017update4。</p>
 </div>
 <div class="section" id="id9">
-<h2>5. 卸载ifort<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<h2>5. 卸载ifort<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
 <p>（1）在安装目录中找到 <code class="docutils literal notranslate"><span class="pre">uninstall.sh</span></code> 文件，执行该文件</p>
 <p class="centered">
 <strong>./uninstall.sh</strong></p><p>（2）如果不小心手残，先将ifort的安装的目录删除了。此时再重新安装ifort，
@@ -275,7 +274,7 @@
 （先chmod 777 uninstall.sh，然后./uninstall.sh）</p>
 </div>
 <div class="section" id="id10">
-<h2>郑重声明<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<h2>郑重声明<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 <p>（1）以上操作均以root身份执行</p>
 <p>（2）本文是篇参考文章，尤其是对新手来说，在安装过程中会遇到各种各样的问题，请不要认为这篇文章无用。
 因为linux操作系统在安装软件时可能需要各种各样的插件，如果你正好缺少哪个插件，则可能会安装失败。</p>

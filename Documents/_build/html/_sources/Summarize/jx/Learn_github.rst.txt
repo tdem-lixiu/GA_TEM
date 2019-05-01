@@ -128,7 +128,7 @@ VS Code
 前言
 ::::::::::
 
-本段内容引自 ``https://github.com/qianguyihao/Web/blob/master/00-%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/01-VS%20Code%E7%9A%84%E4%BD%BF%E7%94%A8.md``
+本段内容引自 ``https://github.com/qianguyihao/``
 
 VS Code
 本来是前端人员专用，但由于它实在是太好用了，于是，各种开发方向的码农也正在用
@@ -165,18 +165,10 @@ VS Code的一些补充
 
 -  VS Code 的源代码以MIT协议开源。
 
--  VS Code 自带了 TypeScript 和 Node.js 的支持。也就是说，你在书写 JS 和
-   TS 时，是自带智能提示的。
-
--  有一点你可能不知道，VS Code 这个客户端软件是用 js
-   语言开发出来的（具体请自行查阅关键字\ ``Electron``\ ）。有句话说得好：能用
-   js 实现的功能，最终一定会用 js 实现。
-
 前端利器之争： VS Code 与 WebStorm
 ::::::::::::::::::::::::::::::::::::::::
 
-前端小白最喜欢问的一个问题是：哪个编辑器/IDE 好用？是VS Code还是
-WebStorm （WebStorm 其实是 IntelliJ IDEA的定制版）？我来做个对比：
+对比：
 
 -  **哪个更酷**\ ：显然 VS Code 更酷。
 
