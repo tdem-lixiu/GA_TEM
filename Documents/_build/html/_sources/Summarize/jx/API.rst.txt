@@ -58,6 +58,43 @@ Convert GiD mesh file.
 2.class Calc1DFwd()
 :::::::::::::::::::::::
 
+.. py:function:: def initData()
+
+    Initialization 1D forward parameters.
+
+    :param nlayer: ``3``
+    :type nlayer: ``int``
+    :param res: ``[100, 10, 100]``
+    :type res: ``dtype='f8', order='f'``
+    :param thickness: ``[20, 10]``
+    :type thickness: ``dtype='f8', order='f'``
+    :param I0: ``1.0``
+    :type I0: ``float64``
+
+.. py:function:: def initUI()
+
+    Initialization interface.
+
+.. py:function:: def rbclicked()
+
+    Get radio button information.
+
+.. py:function:: def savedata()
+
+    Save forward data.
+
+.. py:function:: def calculate()
+
+    1D GA-TEM forward.
+
+.. py:function:: def critical()
+
+    Reply information by QMessageBox.
+
+.. py:function:: def logplot()
+
+    Plot forward data in loglog axis.
+
 3.class Calc1DFwd_p()
 :::::::::::::::::::::::
 
