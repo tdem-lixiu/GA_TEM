@@ -79,21 +79,45 @@ Convert GiD mesh file.
 
     Get radio button information.
 
+    :param filename: ``d`` , Field
+    :type filename: 1
+    :param filename: ``f`` , Time derivative of the field
+    :type filename: 2
+
 .. py:function:: def savedata()
 
     Save forward data.
+
+    :param filename: Input file name
+    :type filename: str
 
 .. py:function:: def calculate()
 
     1D GA-TEM forward.
 
+    :param calc_lib: GATEM_Fwd1D.dll
+    :type calc_lib: cdll.library
+    :param calc_lib.GroundAirTEM1DFwd.argtypes: [c_int, POINTER(c_double), POINTER(c_double),
+     c_double, c_int, POINTER(c_double), POINTER(c_double), c_double, c_double, c_double, c_char, POINTER(c_double)]
+    :type calc_lib.GroundAirTEM1DFwd.argtypes: list
+    :param calc_lib.GroundAirTEM1DFwd.restyper: POINTER(c_double)
+    :type calc_lib.GroundAirTEM1DFwd.restype: list
+    :param calc_reply: ``Finish``
+    :type calc_reply: QMessageBox
+
 .. py:function:: def critical()
 
     Reply information by QMessageBox.
 
+    :param msgBox: Error Message, Retry/Abort/Ignore
+    :type msgBox: QMessageBox
+
 .. py:function:: def logplot()
 
     Plot forward data in loglog axis.
+
+    :param dbdt: dbdt[:,0], dbdt[:,1]
+    :type dbdt: ``np.narray``
 
 3.class Calc1DFwd_p()
 :::::::::::::::::::::::
@@ -104,14 +128,66 @@ Module Table
 1.class TableWindow()
 :::::::::::::::::::::::
 
+.. py:function:: def getfilename()
+
+    Get the filename of the data to display in table.
+
+.. py:function:: def saveas()
+
+    Save as function API.
+
+.. py:function:: def save()
+
+    Save function API.
+
 2.class FilteredTableWidget()
 :::::::::::::::::::::::::::::::
+
+.. py:function:: def slotSelect()
+
+    The SLOT for which data is selected.
+
+.. py:function:: def on_view_horizontalHeader_sectionClicked()
+
+    Set the header for data.
+
+.. py:function:: def menuClose()
+
+    The operation after set the fileter.
+
+.. py:function:: def loadAll(filename)
+
+    Load all the data in the table.
+
+.. py:function:: def Saveas()
+
+    Save as function
+
+.. py:function:: def Save()
+
+    Save function
+
+.. py:function:: def clearFilter()
+
+    Clear the filtered.
+
+.. py:function:: def filterdata()
+
+    Filtered part of data is not displayed.
 
 Other Module
 ===============
 
 1.class login()
 :::::::::::::::::
+
+.. py:function:: def loginInit()
+
+    Initialization login information.
+
+.. py:function:: def showDialog()
+
+    Display current login information.
 
 MainWindow
 ===============
