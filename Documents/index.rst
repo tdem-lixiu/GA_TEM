@@ -9,7 +9,8 @@ domain Electromagnetic Method``
  成员         邮箱
 刘文韬  wtliu5369@163.com
 景旭    jx_tdem@qq.com
-鲁凯亮  xxxxxxx@qq.com
+鲁凯亮  chdlukailiang@gmail.com
+曹华科   496405242@qq.com
 ======  =================
 
 --------------
@@ -158,5 +159,3 @@ domain Electromagnetic Method``
    :maxdepth: 1
 
    Summarize/sumindex
-
---------------

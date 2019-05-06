@@ -1,0 +1,232 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Kirchhoff积分公式推导 &mdash; GA-TEM 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="成熟地球物理软件情况" href="software.html" />
+    <link rel="prev" title="航空TEM程序总结-曹华科" href="../chk/ATEM1D.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> GA-TEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../content/project/project.html">地空软件开发工作管理规范</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html">使用文档-鲁凯亮</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html#id2">学习总结-曹华科</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../sumindex.html#id3">测试</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Kirchhoff积分公式推导</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software.html">成熟地球物理软件情况</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Learn_github.html">平台使用预备知识点</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">GA-TEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../sumindex.html">使用文档-鲁凯亮</a> &raquo;</li>
+        
+      <li>Kirchhoff积分公式推导</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Summarize/jx/test.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="kirchhoff">
+<h1>Kirchhoff积分公式推导<a class="headerlink" href="#kirchhoff" title="Permalink to this headline">¶</a></h1>
+<p>如果围绕着震源所在的某一闭合面 Q 上已知波动的位移位 <span class="math notranslate nohighlight">\(\varphi(x, y, z)\)</span> 及其导数，
+且这些值是连续的，那么可以算出 Q 面外任意观测点 <span class="math notranslate nohighlight">\(M\left(x_{1}, y_{1}, z_{1}\right)\)</span> 上
+由源引起的位移位 <span class="math notranslate nohighlight">\(\varphi\)</span> 的解，该解用Kirchhoff积分公式来计算</p>
+<div class="math notranslate nohighlight">
+\[\varphi \left( {{x}_{1}},{{y}_{1}},{{z}_{1}} \right)=-\frac{1}{4\pi }\mathop{{\int\!\!\!\!\!\int}\mkern-21mu \bigcirc}\nolimits_Q\left\{ [\varphi ]\frac{\partial }{\partial n}\left( \frac{1}{r} \right)-\frac{1}{r}\left[ \frac{\partial r}{\partial n} \right]-\frac{1}{vr}\left[ \frac{\partial \varphi }{\partial t} \right] \right\}dQ\]</div>
+<p><span class="math notranslate nohighlight">\([\varphi]\)</span> 为延时位，
+<span class="math notranslate nohighlight">\(\varphi\left(x, y, z, t-\frac{r}{V}\right)=[\varphi]\)</span></p>
+<p>Kirchhoff积分公式推导：</p>
+<p>假设在时刻t，点 <span class="math notranslate nohighlight">\(M\left(x_{1}, y_{1}, z_{1}\right)\)</span> 上观测到的位函数为
+<span class="math notranslate nohighlight">\(\varphi\left(x_{1}, y_{1}, z, t\right)\)</span> ，
+则在前一时刻 <span class="math notranslate nohighlight">\(t_{1}=t-\frac{r}{V}\)</span> ，在闭合曲面Q上的位移是
+<span class="math notranslate nohighlight">\(\varphi\left(x, y, z, t-\frac{r}{V}\right)=[\varphi]\)</span> ，
+称 <span class="math notranslate nohighlight">\([\varphi]\)</span> 为“延迟位”，r为点M到Q上点的距离。</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="software.html" class="btn btn-neutral float-right" title="成熟地球物理软件情况" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../chk/ATEM1D.html" class="btn btn-neutral float-left" title="航空TEM程序总结-曹华科" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Jing Xu
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>航空TEM程序总结-曹华科 &mdash; GA-TEM 0.0.1 文档</title>
+  <title>航空TEM程序总结-曹华科 &mdash; GA-TEM 0.0.1 documentation</title>
   
 
   
@@ -25,7 +25,7 @@
         <script type="text/javascript" src="../../_static/underscore.js"></script>
         <script type="text/javascript" src="../../_static/doctools.js"></script>
         <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/translations.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -34,9 +34,10 @@
   
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="prev" title="第一章 MobaXterm的安装" href="../lkl/Linux_lkl.html" /> 
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Kirchhoff积分公式推导" href="../jx/test.html" />
+    <link rel="prev" title="Centos7上安装ifort2013使用说明-鲁凯亮" href="../lkl/CentOS-ifort_lkl.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,6 +105,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../sumindex.html#id3">测试</a></li>
 </ul>
 
             
@@ -171,9 +173,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tem">
-<h1>航空TEM程序总结-曹华科<a class="headerlink" href="#tem" title="永久链接至标题">¶</a></h1>
+<h1>航空TEM程序总结-曹华科<a class="headerlink" href="#tem" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>1.为什么视电阻率定义会得不到浅层的数据？<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>1.为什么视电阻率定义会得不到浅层的数据？<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>因为半正弦波和三角波以及梯形波都不是全频率域波形，因为它们没有相应的高频率成分，所以无法得到浅层的信息，
 但值得注意的时，当梯形波的下降沿越窄时，其最大的高频成分就越多，可能得到的越浅层的信息；但是半正弦波和
 三角波，它们的高频成分少，所以存在较大的穿透深度（建议看频谱分析），三角波和半正弦波的穿透深度差不多大
@@ -181,13 +183,13 @@
 解决方案：在开始时，先是定义前面的时间道，试出每种波形的相应穿透深度。</p>
 </div>
 <div class="section" id="k">
-<h2>2.为什么K型地电模型时，当第一层和第三层的层厚、电阻率参数不变时，改变第二层的电阻率，正演曲线几乎重合或者视电阻率曲线几乎不变？<a class="headerlink" href="#k" title="永久链接至标题">¶</a></h2>
+<h2>2.为什么K型地电模型时，当第一层和第三层的层厚、电阻率参数不变时，改变第二层的电阻率，正演曲线几乎重合或者视电阻率曲线几乎不变？<a class="headerlink" href="#k" title="Permalink to this headline">¶</a></h2>
 <p>这种现象叫做瞬变电磁法的H等值线原理，但第二层的厚度比较薄时，第二层的电阻率在一定范围变化所引起的数据
 变化会在5%以内，也就是说，在这种情况下，与第二层的电阻率变化无关，和第二层的厚度有关。
 解决方案：增大第二层的厚度（这是关键），并提高第二层电阻率变化率（降低第一层和第三层的电阻率）</p>
 </div>
 <div class="section" id="id2">
-<h2>3.为什么第一层的电阻率不变的情况下，同一种波形的穿透深度会发生变化呢？<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<h2>3.为什么第一层的电阻率不变的情况下，同一种波形的穿透深度会发生变化呢？<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>首先得明确视电阻率定义:它是将地下非均匀的地质体当作均匀大地处理的一种方法，容易受到第二层的影响，而瞬
 变电磁法对低阻体灵敏而对高阻体不灵敏，所以当第二层是低阻时，其穿透深度大，而高阻时，其穿透深度可以视为
 较小。关键是受到计算误差的影响，误差导致了视电阻率定义会有10%的波动。
@@ -200,7 +202,7 @@
 误差待解决！</p>
 </div>
 <div class="section" id="id3">
-<h2>4.为什么视电阻率定义晚期的时候误差会特别大，有多点跳跃？<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<h2>4.为什么视电阻率定义晚期的时候误差会特别大，有多点跳跃？<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>正演存在一定的误差，尤其当选取的电阻率的跨度较大时，例如10，100，1000，会出现明显的跳跃，跨度过大导致的
 误差会变大时因为里面的结果用了插值函数，由于2端固定，插值就会可能产生较大的波动
 解决方案：选取跨度较小的电阻率。
@@ -208,33 +210,23 @@
 进行平滑处理</p>
 </div>
 <div class="section" id="id4">
-<h2>程序改进：<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<h2>程序改进：<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>原程序自带的是ic=0到4的情况，其中0代表脉冲波，1代表下阶跃波，2代表半正弦波，3代表梯形波，4代表三角波，
 他们的时间都是从on_time开始计算的。
-输入说明：当为脉冲波是，仅输入：0;
-1.当为下阶跃波时，仅输入：1；
+输入说明：当为脉冲波是，仅输入：0
+1.当为下阶跃波时，仅输入：1
 2.当为半正弦波时，需输入：2</p>
-<blockquote>
-<div><p>4.e-3 1.6e-2 2</p>
-</div></blockquote>
+<p>4.e-3 1.6e-2 2</p>
 <p>这里换行代表在文件输入中是需要换行的，第二行第一个数据是on_time时间，第二个是off_time，第三个是波形个数；</p>
 <p>3.当为梯形波时，需输入：3</p>
-<blockquote>
-<div><p>0.1e-4 3.98e-3 0.1e-4 1.6e-2  1  !上升沿的时间 平缓的时间 下降沿的时间 关断时间 波形的个数</p>
-</div></blockquote>
+<p>0.1e-4 3.98e-3 0.1e-4 1.6e-2  1  !上升沿的时间 平缓的时间 下降沿的时间 关断时间 波形的个数</p>
 <p>4.当为三角波时，需输入：4</p>
-<blockquote>
-<div><p>2.e-3 2.e-3 1.6e-2 1  !三角波左半边的时间 三角波右半边的时间 关断时间 波形个数</p>
-</div></blockquote>
+<p>2.e-3 2.e-3 1.6e-2 1  !三角波左半边的时间 三角波右半边的时间 关断时间 波形个数</p>
 <p>5.ic=5和ic=6是本笔者根据需要自己添加的功能。当为ic=5是，代表的是矩形波，需输入：5</p>
-<blockquote>
-<div><p>4.e-4 1.6e-3 2  !第一个是脉宽，第二个是波形的关断时间，第三个是波形个数</p>
-</div></blockquote>
+<p>4.e-4 1.6e-3 2  !第一个是脉宽，第二个是波形的关断时间，第三个是波形个数</p>
 <p>6.ic=6时，需输入：6</p>
-<blockquote>
-<div><p>5.e-5 31
-1     1       -1      -1      -1      1       1       1       1       1       -1      -1      1       1       -1      1       -1      -1      1       -1      -1      -1      -1      1       -1      1       -1      1       1       1       -1</p>
-</div></blockquote>
+<p>5.e-5 31</p>
+<p>1       1       -1      -1      -1      1       1       1       1       1       -1      -1      1       1       -1      1       -1      -1      1       -1      -1      -1      -1      1       -1      1       -1      1       1       1       -1</p>
 <p>其中第二行，第一个代表最小码元，第二个代表伪随机波的序列个数，第三行代表伪随机二进制码，参考文献是：</p>
 <p>《多通道瞬变电磁m序列全时正演模拟与反演》、《MTEM波场变换与偏移成像方法研究_智庆全》
 其中伪随机二进制码是利用 Produce pseudo-random code 的代码产生的。</p>
@@ -248,7 +240,7 @@
 然后在ATEMAppRes_并行_批量处理，程序用下阶跃波进行定义</p>
 </div>
 <div class="section" id="atem1dfwd">
-<h2>1.ATEM1DFwd输入文件<a class="headerlink" href="#atem1dfwd" title="永久链接至标题">¶</a></h2>
+<h2>1.ATEM1DFwd输入文件<a class="headerlink" href="#atem1dfwd" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CENTRAL         !SEPARATE/CENTRAL !装置类型，CENTRAL是中心回线装置,SEPARATE是分离装置
 VMD             !VMD/HMD   !源的类型，VMD是垂直磁偶极子源,HMD是水平磁偶极子源
 30.0 30.0 100   !ALTITUDE OF TRANSMITTER/RECEIVER. Area.(中心回线装置)/收发距（分离装置），第一个是发射点的高度，第二个是接受点的高度，第三个分情况，如果是中心回线，则是有效面积，如果是分离装置，则是收发距
@@ -263,7 +255,7 @@ ic              !ic是0-6的整数，代表发射波类型，ic=0或者1时，�
 </div>
 </div>
 <div class="section" id="id5">
-<h2>2.ATEM1DFwd输出文件<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<h2>2.ATEM1DFwd输出文件<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <p>本程序的输出文件为：result.TXT
 文件说明：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!----------------------------该部分全部为参数的说明--------------------------!
@@ -295,7 +287,7 @@ ic              !ic是0-6的整数，代表发射波类型，ic=0或者1时，�
 <p>第一列为时间，后面的4列是各个响应分量</p>
 </div>
 <div class="section" id="atemappres">
-<h2>3.ATEMAppRes程序输入文件<a class="headerlink" href="#atemappres" title="永久链接至标题">¶</a></h2>
+<h2>3.ATEMAppRes程序输入文件<a class="headerlink" href="#atemappres" title="Permalink to this headline">¶</a></h2>
 <p>正演结果程序来进行视电阻率定义，其中ATEMAppRes的输入参数文件名为：model.txt</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#成像参数           !说明语句
 1  1000            !视电阻率成像的最小和最大的电阻率范围
@@ -323,7 +315,7 @@ bz                 !观测分量dbxdt;dbzdt;bx;bz,视电阻率定义的分量，
 </div>
 </div>
 <div class="section" id="id6">
-<h2>4.ATEMAppRes程序输出文件<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<h2>4.ATEMAppRes程序输出文件<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>程序中得到结果文件为：imgres.dat，输出参数文件说明：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>时间(s)        视电阻率(欧姆.米)     !说明语句
 0.004046       27.399505            !第一列是时间，第二列是定义出来的视电阻率
@@ -344,8 +336,10 @@ bz                 !观测分量dbxdt;dbzdt;bx;bz,视电阻率定义的分量，
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../jx/test.html" class="btn btn-neutral float-right" title="Kirchhoff积分公式推导" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="../lkl/Linux_lkl.html" class="btn btn-neutral float-left" title="第一章 MobaXterm的安装" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="../lkl/CentOS-ifort_lkl.html" class="btn btn-neutral float-left" title="Centos7上安装ifort2013使用说明-鲁凯亮" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
